@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- section top banner -->
+<section id="home">
+    <div class="container-fluid px-0 top-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <h1>Best CNC Machine Needed #Then trust us</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, maiores velit! Error
+                        veniam fugit corporis culpa.</p>
+                    <div class="mt-4">
+                        <button class="main-btn">Book Now <i class="fas fa-shopping-basket ps-3"></i></button>
+                        <button class="white-btn ms-lg-4 mt-lg-0 mt-4">Book Now <i
+                                class="fas fa-angle-right ps-3"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- about section -->
+
+<section id="about">
+    <div class="about-section wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 col-md-12 mb-lg-0 mb-5">
+                    <div class="card border-0">
+                        <img src="{% static 'images/img2.jpeg' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 text-sec">
+                    <h2>We pride ourselves for making best quality product in the market.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum eius porro. Voluptatibus
+                        deserunt atque vero numquam facere? Corporis consequuntur nam accusantium vitae.</p>
+                    <button class="main-btn mt-4">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <!-- added about sec part2 -->
+        <div class="conatiner cnc-type">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12 text-sec mb-lg-0 mb-5">
+                    <h2>We make everything by our own with the best possible
+                        equipments </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio finibus
+                        bibendum in sit
+                        amet leo. Mauris feugiat erat tellus.Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia and Consonantia, there live the blind texts.</p>
+                    <ul class="list-unstyled py-3">
+                        <li>Etiam sed dolor ac diam volutpat.</li>
+                        <li>Erat volutpat aliquet imperdiet.</li>
+                        <li>purus a odio finibus bibendum.</li>
+                    </ul>
+                    <button class="main-btn mt-4">Learn More</button>
+                </div>
+                <div class="col-lg-7 col-md-12">
+                    <div class="card border-0">
+                        <img src="{% static 'images/collage.png' %}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about sec part 3 -->
+<section id="sec-3">
+    <div class="section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="text-content">
+                        <h2>When you need a perfect machine then you don't compormise with the quality .
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
+                            finibus bibendum in sit amet leo. Mauris feugiat erat tellus.</p>
+                        <button class="main-btn mt-4">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- our product section -->
+
+<!-- chirayu yaha apna product page ka code dal dio -->
+
+
+
+<!-- review sectiom -->
+
+<section id="review">
+    <div class="wrapper review-section">
+        <div class="container text-center">
+            <div class="text-center pb-4">
+                <h2>Customer Reviews</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-lg-10 offset-lg-1">
+                    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            {% for review in review %}
+                            <div class="carousel-item active">
+                                <div class="carousel-caption">
+                                    <img src="{{review.image.url}}">
+                                    <p>"{{review.message}}"</p>
+                                    <h5>{{review.UserName}}</h5>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+
+<footer class="page-footer font-small cyan darken-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!-- Grid row-->
+        <div class="row">
+
+            <div class="col-4 py-5">
+                <div class="mb-5 flex-center">
+
+                    <div class="col">
+                        <h5>Address</h5>
+                        <hr><br>
+                        <p>Plot No.: 143,Chand(Majhagai)</p>
+                        <p>Dist: Kaimur(Bhabua)</p>
+                        <p>Pin code: 821106</p>
+                        <p>Bihar,India</p>
+                        <p>+91 7541985905</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-4 py-5">
+                <div class="mb-5 flex-center">
+
+                    <div class="col">
+                        <h5>Quick links</h5>
+                        <hr><br>
+                        <p><a class="nav-link active" aria-current="page" href="#home">Home</a></p>
+                        <p><a class="nav-link" href="#about">About Us</a></p>
+                        <p><a class="nav-link" href="#Products">Products</a></p>
+                        <p><a class="nav-link" href="#contact">Contact Us</a></p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 py-5">
+                <div class="mb-5 flex-center">
+
+                    <div class="col">
+                        <h5>visit us</h5>
+                        <hr><br>
+                        <!-- Facebook -->
+                        <a class="fb-ic ">
+                            <i class="fab fa-facebook-f fa-lg fa-2x"> </i>
+                        </a>
+
+                        <!-- Google +-->
+                        <a class="gplus-ic ">
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        </a>
+
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+<!-- footer -->
+{% endblock content %}
