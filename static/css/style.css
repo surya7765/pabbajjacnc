@@ -169,19 +169,21 @@ p {
 }
 
 /* header design */
+
 .navigation-wrap {
   position: fixed;
   width: 100%;
   left: 0;
   z-index: 1000;
-  -webkit-transition: all 0.3s ease-out;
+  background-color: var(--white-color);
+  /* -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; */
 }
 .navigation-wrap .nav-item {
   padding: 0 0.625rem;
-  transition: all 200ms linear;
+  /* transition: all 200ms linear; */
 }
 
 .navbar-toggler:focus {
@@ -205,7 +207,7 @@ p {
 
 /* change navbar stylling on scroll */
 
-.navigation-wrap.scroll-on {
+/* .navigation-wrap.scroll-on {
   position: fixed;
   top: 0;
   left: 0;
@@ -213,16 +215,24 @@ p {
   background-color: var(--white-color);
   box-shadow: 0 0.125rem 1.75rem 0 rgb(0, 0, 0, 0.09);
   transition: all 0.15s ease-in-out 0s;
+} */
+
+#navbar-inside {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration-color: var(--primary-color);
+  letter-spacing: 1px;
 }
 
 /* top banner design */
 
-.top-banner {
+/* .top-banner {
   width: 100%;
   background: url("../images/bg/bg-2.jpeg") no-repeat center;
   background-size: cover;
-  padding: 16.875rem 0 9.375rem;
-}
+   padding: 16.875rem 0 9.375rem;
+} */
 
 /* aboout section */
 
@@ -316,4 +326,8 @@ p {
 }
 .review-section .carousel-indicators button.active {
   opacity: 1;
+}
+
+.fixed {
+  position: fixed;
 }

@@ -6,13 +6,37 @@
 
 <!-- section top banner -->
 <section id="home">
-    <div class="container-fluid px-0 top-banner">
-        <div class="container">
+    <!-- <div class="container-fluid px-0 top-banner"> -->
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="{% static 'images/seventh.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/third.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/ten.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-6">
                     <h1>Best CNC Machine Needed #Then trust us</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, maiores velit! Error
-                        veniam fugit corporis culpa.</p>
+                    <p>Our Mission is to provide efficient quality engineering product and services with advance
+                        technology to customers in affordable prices.</p>
                     <div class="mt-4">
                         <button class="main-btn">Book Now <i class="fas fa-shopping-basket ps-3"></i></button>
                         <button class="white-btn ms-lg-4 mt-lg-0 mt-4">Book Now <i
@@ -20,8 +44,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- /div> -->
 </section>
 
 
@@ -39,8 +63,10 @@
 
                 <div class="col-lg-5 col-md-12 text-sec">
                     <h2>We pride ourselves for making best quality product in the market.</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum eius porro. Voluptatibus
-                        deserunt atque vero numquam facere? Corporis consequuntur nam accusantium vitae.</p>
+                    <p>Be recognized as a pre-eminent cnc engraving and carving machinary & robotic arm manufacturers
+                        that fully engages our people,passionately embraces new idea, seeks out revolutionary
+                        technologies and available at affordable prices to our customers.
+                    </p>
                     <button class="main-btn mt-4">Learn More</button>
                 </div>
             </div>
@@ -51,17 +77,15 @@
                 <div class="col-lg-5 col-md-12 text-sec mb-lg-0 mb-5">
                     <h2>We make everything by our own with the best possible
                         equipments </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio finibus
-                        bibendum in sit
-                        amet leo. Mauris feugiat erat tellus.Far far away, behind the word mountains, far from the
-                        countries
-                        Vokalia and Consonantia, there live the blind texts.</p>
+                    <p>Our ethical bussiness practices and commited approach have us the faith of our clients.
+                    </p>
                     <ul class="list-unstyled py-3">
-                        <li>Etiam sed dolor ac diam volutpat.</li>
-                        <li>Erat volutpat aliquet imperdiet.</li>
-                        <li>purus a odio finibus bibendum.</li>
+                        <li>Affordable and Competative prices.</li>
+                        <li>Delivery on time.</li>
+                        <li>Superior finish quality of products.</li>
+                        <li>Client - Centric product design.</li>
+
                     </ul>
-                    <button class="main-btn mt-4">Learn More</button>
                 </div>
                 <div class="col-lg-7 col-md-12">
                     <div class="card border-0">
@@ -81,8 +105,7 @@
                     <div class="text-content">
                         <h2>When you need a perfect machine then you don't compormise with the quality .
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
-                            finibus bibendum in sit amet leo. Mauris feugiat erat tellus.</p>
+                        <p>#CONNECT WITH US.</p>
                         <button class="main-btn mt-4">Read More</button>
                     </div>
                 </div>
@@ -93,6 +116,442 @@
 
 
 <!-- our product section -->
+
+<!-- <section id="our-Product">
+
+
+    <div class="container my-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-4 ">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/ten.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/fifth.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/third.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="container my-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-4 ">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/ten.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/fifth.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/images/third.jpg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="main-btn mt-4 ">More</button>
+    </div>
+
+
+
+
+</section> -->
+
+<div class="container mt-5 mb-5 , products">
+    <div class="row g-1">
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 h-75 d-block"
+                                    src="/static/images/fifth.jpg" alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" style="height: 320px;"
+                                    src="/static/images/first.jpg" alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fourth.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-1" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-1" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>Lathe CNC machine</h5><span>$1,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>2000</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>400kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>nov</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-2">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-2" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-2" data-slide-to="1"></li>
+                            <li data-target="#carousel-2" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>CNC machine</h5><span>$2,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>1990</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>100kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>dec</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-3">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-3" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-3" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-3" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-3" data-slide-to="1"></li>
+                            <li data-target="#carousel-3" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>router machine</h5><span>$3,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>2010</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>300kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>sept</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-4">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-4" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-4" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-4" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-4" data-slide-to="1"></li>
+                            <li data-target="#carousel-4" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>grinding lathe</h5><span>$3,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>2005</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>250kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>jan</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block  main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-5">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/fifth.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-5" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-5" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-5" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-5" data-slide-to="1"></li>
+                            <li data-target="#carousel-5" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>drilling machine</h5><span>$1,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>2003</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>350kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>feb</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-card">
+                <div class="p-carousel">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-6">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img class="w-100 d-block" src="/static/images/fourth.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/nine.jpg"
+                                    alt="Slide Image"></div>
+                            <div class="carousel-item"><img class="w-100 d-block" src="/static/images/third.jpg"
+                                    alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-6" role="button" data-slide="prev"><span
+                                    class="carousel-control-prev-icon"></span><span
+                                    class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                href="#carousel-6" role="button" data-slide="next"><span
+                                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-6" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-6" data-slide-to="1"></li>
+                            <li data-target="#carousel-6" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="p-details">
+                    <div class="d-flex justify-content-between align-items-center mx-2">
+                        <h5>Milling cnc machine</h5><span>$3,200</span>
+                    </div>
+                    <div class="mx-2">
+                        <hr class="line">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2 spec mx-2">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">year</h6><span>2007</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">weight</h6><span>430kg</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <h6 class="mb-0">available from</h6><span>march</span>
+                        </div>
+                    </div>
+                    <div class="buy mt-3"><button class="btn btn-primary btn-block main-btn" type="button">Buy
+                            Now</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <!-- chirayu yaha apna product page ka code dal dio -->
 
