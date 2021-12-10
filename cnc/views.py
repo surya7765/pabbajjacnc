@@ -12,3 +12,7 @@ def home(request):
     }
 
     return render(request, 'index.html', context)
+
+
+def faq(request):
+    return render(request, 'faq.html')

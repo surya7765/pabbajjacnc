@@ -18,9 +18,9 @@
   .navigation-wrap .nav-link {
     line-height: 1.875rem;
   }
-  .top-banner {
+  /* .top-banner {
     padding: 9.375rem 0 9.375rem;
-  }
+  } */
 
   .review-section .carousel-item .carousel-caption p {
     padding: 0;
@@ -37,9 +37,9 @@
     line-height: 2.0625rem;
   }
 
-  .top-banner {
+  /* .top-banner {
     padding: 10.375rem 0 9.375rem;
-  }
+  } */
 
   .section-3 {
     height: auto;
@@ -53,7 +53,7 @@
 
 @media (max-width: 330px) {
   /* carousel design */
-  .reviewww-section .carousel-item {
+  .review-section .carousel-item {
     padding: 13rem 3.125rem;
   }
 }
