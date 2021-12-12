@@ -15,15 +15,14 @@ class Review(models.Model):
 
 class Product(models.Model):
     title = models.CharField(("Give your title"), max_length=50)
-    manufacturing_date = models.DateField(
-        ("Add Manufacturing date"), auto_now=False, auto_now_add=False)
     price = models.IntegerField(("Enter Price"))
     availability = models.BooleanField(("Available or Not"))
-    item_number = models.CharField(max_length=50)
-    model_numbeer = models.CharField(max_length=50)
+    model_numbeer = models.CharField(max_length=50, blank=True)
 
 
 class ProductImage(models.Model):
     title = models.ForeignKey(Product, default=None,
                               on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='upload/')
+    image1 = models.ImageField(upload_to='upload/')
+    image2 = models.ImageField(upload_to='upload/')
+    image3 = models.ImageField(upload_to='upload/')
