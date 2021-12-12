@@ -19,8 +19,8 @@ class Product(models.Model):
         ("Add Manufacturing date"), auto_now=False, auto_now_add=False)
     price = models.IntegerField(("Enter Price"))
     availability = models.BooleanField(("Available or Not"))
-    item_number = models.CharField(max_length=50)
-    model_numbeer = models.CharField(max_length=50)
+    item_number = models.CharField(max_length=50, blank=True)
+    model_numbeer = models.CharField(max_length=50, blank=True)
 
 
 class ProductImage(models.Model):
