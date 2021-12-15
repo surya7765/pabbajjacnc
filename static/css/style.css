@@ -60,15 +60,9 @@ body {
 
 /* ::-webkit-scrollbar {
   width: 0.625em;
-<<<<<<< HEAD
-}
-
-::-webkit-scrollbar-track {
-=======
   overflow-x: hidden;
 } */
 /* ::-webkit-scrollbar-track {
->>>>>>> 669b3d9c9e99282c5186309095394228550d07e3
   background: var(--white-color);
   overflow-x: hidden;
 } */
@@ -185,7 +179,7 @@ p {
   width: 100%;
   left: 0;
   z-index: 1000;
-  background-color: var(--white-color);
+  background-color: #f49fb0;
   /* -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -293,6 +287,7 @@ p {
   padding-top: 100px;
   text-align: center;
 }
+
 .section-3 h2 {
   color: var(--primary-color);
 }
@@ -339,6 +334,49 @@ p {
   opacity: 1;
 }
 
-.fixed {
-  position: fixed;
+.swiper-slide img {
+  width: 100%;
+  height: 30rem;
+}
+
+th,
+td {
+  padding: 0.75em;
+}
+th {
+  background: linear-gradient(#a82c48, #ac4b61);
+  color: #fff;
+}
+th:first-child {
+  border-radius: 9px 0 0 0;
+}
+th:last-child {
+  border-radius: 0 9px 0 0;
+}
+tr:last-child td:first-child {
+  border-radius: 0 0 0 9px;
+}
+tr:last-child td:last-child {
+  border-radius: 0 0 9px 0;
+}
+tr:nth-child(odd) {
+  background: #f49fb0;
+}
+tr:hover {
+  background: #ee8a9e;
+}
+
+#career {
+  width: 100%;
+  height: 28.125rem;
+  background: url("../images/career.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 100px;
+  color: #fff;
+  text-align: center;
+}
+
+#myTab li.active a {
+  border-bottom-color: transparent;
+  background-color: Yellow;
 }

@@ -1,19 +1,9 @@
 from django.contrib import admin
-from .models import Review, Product, ProductImage
+from .models import Review, Product, Career, Contact
 
 # Register your models here.
 
 admin.site.register(Review)
-# admin.site.register(Product)
-
-
-class ProductImageInline(admin.TabularInline):
-    model = ProductImage
-    extra = 3
-
-
-class PropertyAdmin(admin.ModelAdmin):
-    inlines = [ProductImageInline, ]
-
-
-admin.site.register(Product, PropertyAdmin)
+admin.site.register(Product)
+admin.site.register(Career)
+admin.site.register(Contact)
