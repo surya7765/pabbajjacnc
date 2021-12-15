@@ -22,6 +22,9 @@ def faq(request):
     return render(request, 'faq.html')
 
 
+def about(request):
+    return render(request, 'about.html')
+
 def career(request):
     context = {'careers': Career.objects.all()}
     return render(request, 'career.html', context)

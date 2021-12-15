@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/responsivestyle.css' %}" />
     <link rel="stylesheet" href="{% static 'css/faq.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
@@ -102,7 +103,7 @@
                 <a class="nav-link" href="{% url 'product' %}">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about">About Us</a>
+                <a class="nav-link" href="{% url 'about' %}">About Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#review">Reviews</a>
@@ -159,7 +160,7 @@
                 href="{% url 'home' %}"
                 >Home</a
               >
-              <a class="nav-link text-white" href="#about">About Us</a>
+              <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
               <a class="nav-link text-white" href="{% url 'product' %}"
                 >Products</a
               >
