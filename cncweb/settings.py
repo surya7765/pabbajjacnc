@@ -23,11 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-7cuoq4se=1(t=egz%zn$c6*9g=5gi3ue@60evbi8rwtukst)b3'
+# SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # TinyMce
 TINYMCE_DEFAULT_CONFIG = {
@@ -68,8 +69,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cnc',
     'tinymce',
+    'storages',
 ]
-
 
 
 MIDDLEWARE = [
@@ -154,15 +155,15 @@ STATIC_URL = '/static/'
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR,"static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR,"assets")
+STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
@@ -173,3 +174,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# AWS access
+
+AWS_QUERYSTRING_AUTH = False
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+AWS_S3_ACCESS_KEY_ID = 'AKIAS5BH7LT6OG6FOH3X'
+AWS_S3_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'pankajcnc'

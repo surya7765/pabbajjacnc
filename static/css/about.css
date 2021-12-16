@@ -16,14 +16,21 @@
   margin-bottom: 70px;
 }
 .panel-1 {
-  background-color: bisque;
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/mission.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  backdrop-filter: opacity(70%);
+  background-color: #bd6363;
   margin-bottom: 20px;
+  padding-top: 10vh;
 }
+
 .left-panel {
   text-align: center;
   font-size: 50px;
   font-family: "Courier New", Courier, monospace;
-  color: red;
+  color: #b52626;
 }
 
 /* .break-tag1 {
@@ -33,9 +40,8 @@
   left: 4%;
 } */
 .mission-text {
-  text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 5vh;
+  text-justify: auto;
   letter-spacing: 2px;
   line-height: 3vh;
   font-family: "Roboto", sans-serif;
@@ -53,9 +59,7 @@
   color: blueviolet;
 }
 .vision-text {
-  text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  text-justify: auto;
   letter-spacing: 2px;
   line-height: 3vh;
   font-family: "Roboto", sans-serif;
