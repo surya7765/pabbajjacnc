@@ -1,1 +1,1 @@
-web: gunicorn cncweb.wsgi
+web: gunicorn cncweb.wsgi --timeout 15
