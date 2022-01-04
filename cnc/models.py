@@ -22,9 +22,9 @@ def compress(image):
 
 
 class Review(models.Model):
-    name = models.CharField(max_length=50, null=True)
-    message = models.TextField(max_length=250,null=True)
-    gmail = models.EmailField(max_length=50, null=True)
+    name = models.CharField(max_length=50)
+    message = models.TextField(max_length=250)
+    gmail = models.EmailField(max_length=50)
     published_date = models.DateTimeField(default=timezone.now, null=True)
     image = models.ImageField(
         upload_to='upload/', height_field=None, width_field=None, max_length=None, null=True)
@@ -42,8 +42,8 @@ class Review(models.Model):
 
 
 class Product(models.Model):
-    title = models.CharField(("Give your title"), max_length=50, null=True)
-    price = models.CharField(("Enter Price"), max_length=10, null=True)
+    title = models.CharField(("Give your title"), max_length=50)
+    price = models.CharField(("Enter Price"), max_length=10)
     availability = models.BooleanField(("Available or Not"))
     model_number = models.CharField(max_length=50, blank=True)
     video_url = models.URLField(max_length=300, null=True)
@@ -54,15 +54,12 @@ class Product(models.Model):
     image3 = models.ImageField(
         upload_to='upload/', max_length=None, blank=True, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
-    automatic = models.BooleanField(
-        ("Automatic or Manual"), default=False, null=True)
+    automatic = models.BooleanField(("Automatic or Manual"), default=False)
     weight = models.CharField(max_length=50, blank=True)
-    plc_control = models.BooleanField(
-        ("PLC Control"), default=False, null=True)
+    plc_control = models.BooleanField(("PLC Control"), default=False)
     computerized = models.BooleanField(
-        ("Computerized or Manual"), default=False, null=True)
-    supply_ability = models.BooleanField(
-        ("Supply Ability"), default=False, null=True)
+        ("Computerized or Manual"), default=False)
+    supply_ability = models.BooleanField(("Supply Ability"), default=False)
 
     detail = HTMLField(blank=True, null=True)
 
@@ -83,9 +80,9 @@ class Product(models.Model):
 
 
 class Book(models.Model):
-    name = models.CharField(max_length=50, null=True)
+    name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, null=True)
-    phone_number = models.CharField(max_length=15, null=True)
+    phone_number = models.CharField( max_length=15)
     date_book = models.DateTimeField(default=timezone.now, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     message = models.TextField(null=True)
@@ -95,9 +92,9 @@ class Book(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=50, null=True)
-    phone_number = models.CharField(max_length=15, null=True)
-    date_contact = models.DateTimeField(default=timezone.now, null=True)
+    name = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=15)
+    date_contact = models.DateTimeField(default=timezone.now)
     message = models.TextField(null=True)
 
     def __str__(self):
@@ -105,11 +102,11 @@ class Contact(models.Model):
     
 
 class Career(models.Model):
-    designation = models.CharField(max_length=50, null=True)
-    image_url = models.CharField(max_length=500, blank=True, null=True)
-    job_location = models.CharField(max_length=50, null=True)
+    designation = models.CharField(max_length=50)
+    image_url = models.CharField(max_length=500, blank=True)
+    job_location = models.CharField(max_length=50)
     job_description = HTMLField(blank=True, null=True)
-    date_posted = models.DateTimeField(default=timezone.now, null=True)
+    date_posted = models.DateTimeField(default=timezone.now)
     responsibility = HTMLField(blank=True, null=True)
     skillset = HTMLField(blank=True, null=True)
     additional = HTMLField(blank=True, null=True)
@@ -120,13 +117,13 @@ class Career(models.Model):
 
 
 class CareerApplication(models.Model):
-    name = models.CharField(max_length=50, null=True)
-    gmail_id = models.EmailField(max_length=254, null=True)
-    department = models.CharField(max_length=50, null=True)
+    name = models.CharField(max_length=50)
+    gmail_id = models.EmailField(max_length=254)
+    department = models.CharField(max_length=50)
     date_upload = models.DateTimeField(default=timezone.now, null=True)
     career = models.ForeignKey(Career, on_delete=models.CASCADE, null=True)
-    contact_details = models.TextField(("Contact Details"), blank=True, null=True)
-    resume = models.FileField(upload_to='upload/', blank=True, null=True)
+    contact_details = models.TextField(("Contact Details"), blank=True)
+    resume = models.FileField(upload_to='upload/', blank=True)
 
     def __str__(self):
         return self.name
