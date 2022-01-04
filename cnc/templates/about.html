@@ -1,67 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+ABOUT PAGE
+{% endblock title %}
+
+{% block style %}
+<style>
+    .about-text{
+        margin-bottom: -100px;
+    }
+     @media screen and (max-width: 768px) {
+         .about-text{
+            margin-bottom: -40px;
+        }
+     }
+</style>
+{% endblock style %}
 
 {% block content %}
 
 
-
-<img src="{% static 'images/about.jpg' %}" alt="" class="img1 image-fluid" id="image">
-
-<div class="abt" style="color:#B54626">About Us</div>
-
-
-
-<div class="float-container panel-1">
-    <div class="left-panel">
-        Mission
-    </div>
-    <div class="container mission-text">
-        <p style="color: rgb(245, 236, 219);"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eligendi veritatis accusamus quae
-            sed.
-            Facilis laudantium ipsam reiciendis aut maiores reprehenderit deserunt voluptatem eum, tempore ratione
-            sapiente architecto fuga. Sint quam debitis voluptates vel cum perferendis amet saepe beatae officiis
-            recusandae, delectus temporibus ex in, magnam nulla dignissimos cumque sed impedit. Cum dignissimos
-            asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eligendi reiciendis dicta a
-            incidunt quod eveniet porro non blanditiis, ullam excepturi magni, nostrum pariatur! Odio quaerat
-            repellendus sapiente fuga doloremque debitis magni ratione blanditiis ipsam sint praesentium voluptas
-            eligendi dolorem consectetur, voluptatem cupiditate consequuntur numquam fugiat architecto similique
-            consequatur dolores magnam. Aspernatur dicta quibusdam quaerat!</p>
+<div class="abt" style="color:#B54626">
+    <div>
+        <img src="{% static 'images/logo1.jpg' %}" style="height:150px;width:150px;" class="img-responsive rounded-circle" alt="about">
+        <h2 class="text-white about-text">Pabbajja Technologies Private Limited.</h2>
+        <span style="font-size:18px;">
+            <a class="text-white"href="tel:+916204227594">&#128222; 6204227594</a>
+            <a class="text-white"href="mailto:admin@pabbajjacnc.com"><i class="fa fa-envelope" aria-hidden="true"></i> admin@pabbajjacnc.com</a>
+        </span>
     </div>
 </div>
 
-<div class="float-container panel-2">
-    <div class="right-panel">
-        <span> Vision</span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 panel-1">
+            <h2 class="panel-text">Mission</h2>
+            <p class="vision-text"> 
+                Our mission is to provide efficient quality engineering product and services with advanced technology to our customers in affordable price.
+                We strive to grow our business with the same honesty and integrity. We use to design our products with sustainability and great features for all.
+                We are committed to provide our customers with the best quality products and services.
+            </p>
+        </div>
+        <div class="col-md-6 panel-2">
+            <h2 class="panel-text">Vision</h2>
+            <p class="vision-text">
+                Be recognized as a preminent engraving and carving CNC machinery and robotic arm manufacturer that furry engages,
+                Our people passionatly embraces new ideas, seeks out revolutionaries technologies available at affordable price to our customers. 
+            </p>
+        </div>
     </div>
-    <div class="container vision-text">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eligendi veritatis accusamus quae
-            sed.
-            Facilis laudantium ipsam reiciendis aut maiores reprehenderit deserunt voluptatem eum, tempore ratione
-            sapiente architecto fuga. Sint quam debitis voluptates vel cum perferendis amet saepe beatae officiis
-            recusandae, delectus temporibus ex in, magnam nulla dignissimos cumque sed impedit. Cum dignissimos
-            asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eligendi reiciendis dicta a
-            incidunt quod eveniet porro non blanditiis, ullam excepturi magni, nostrum pariatur! Odio quaerat
-            repellendus sapiente fuga doloremque debitis magni ratione blanditiis ipsam sint praesentium voluptas
-            eligendi dolorem consectetur, voluptatem cupiditate consequuntur numquam fugiat architecto similique
-            consequatur dolores magnam. Aspernatur dicta quibusdam quaerat!</p>
-    </div>
-
-
-
-
-
 </div>
 
-
-<div class="container company-details" style="padding: 10px;">
-
+<div class="container company-details">
     <h3 class="table-top1">Basic information</h3>
     <table>
-
         <tr>
             <td>Nature of Business</td>
             <td>Manufacturer and Supplier</td>
-
         </tr>
         <tr>
             <td>Additonal Business</td>
@@ -80,65 +75,43 @@
         </tr>
         <tr>
             <td>Registered address</td>
-            <td>PL.143,KH 147,Vill-Majhgain,Tola-
-                Majhgain,Panch-Goin,Block-Chand,Bhabua,Kaimur,Bihar,India.
-
+            <td>PL.143,KH 147,Vill-Majhgain,
+                <br/>Block-Chand,Bhabua,<br/>Kaimur,Bihar,India.
             </td>
-
         </tr>
         <tr>
             <td>Year of Establishment</td>
             <td> December 2021</td>
-
         </tr>
         <tr>
             <td>Legal Status of Firm</td>
             <td>Private Limited.</td>
-
         </tr>
-
     </table>
-
     <h3 class="table-top">Trade & Market</h3>
-
     <table>
-
         <tr>
             <td>Nature of Business</td>
             <td>Manufacturer and Supplier</td>
-
         </tr>
-
-
     </table>
-
     <h3 class="table-top">Infrastructure</h3>
-
     <table>
-
         <tr>
             <td>Nature of Business</td>
             <td>Manufacturer and Supplier</td>
-
         </tr>
         <tr>
             <td>Nature of Business</td>
             <td>Manufacturer and Supplier</td>
-
         </tr>
         <tr>
             <td>Nature of Business</td>
             <td>Manufacturer and Supplier</td>
-
         </tr>
-
-
     </table>
-
     <h3 class="table-top">Company USP</h3>
-
     <table>
-
         <tr>
             <td>Primary Competitive Advantage</td>
             <td>
@@ -153,69 +126,49 @@
         <tr>
             <td>Quality Measures / Testing Facilities</td>
             <td>Yes</td>
-
         </tr>
-
-
     </table>
 
     <h3 class="table-top">Statutory Profile</h3>
 
     <table>
-
         <tr>
             <td>Banker</td>
             <td>
                 <ul>
-                    <li>ABC BANK</li>
-                    <li>XYZW BANK</li>
-
+                    <li>BANK OF BARODA</li>
                 </ul>
             </td>
         </tr>
-
     </table>
-
-
     <h3 class="table-top">Packaging/Payment and Shipment Details</h3>
-
     <table>
-
         <tr>
             <td>Customized Packaging</td>
             <td>Yes</td>
-
         </tr>
-
         <tr>
             <td>Payment Mode</td>
             <td>
                 <ul>
-                    <li>Cash</li>
-                    <li>Cheque</li>
-                    <li>DD</li>
-                    <li>Online</li>
-                    <li>Bank Transfer</li>
+                    <li>RTGS</li>
+                    <li>IMPS</li>
+                    <li>DEMAND DRAFT</li>
+                    <li>NEFT TRANSFER</li>
+                    <li>CASH / CHEQUE</li>
                 </ul>
             </td>
         </tr>
-
         <tr>
             <td>Shipment Mode</td>
             <td>
                 <ul>
                     <li>By Road</li>
-
+                    <li>By Cargo</li>
                 </ul>
             </td>
         </tr>
-
-
-
     </table>
-
 </div>
-
-
 
 {% endblock content %}

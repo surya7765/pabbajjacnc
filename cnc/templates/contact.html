@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+CONTACT PAGE
+{% endblock title %}
+    
+{% block content %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="messageLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageLabel">Contact Us</h5>
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <div id="alert-box"></div>
+                <form id="ajax-form" autocomplete="off">
+                    {% csrf_token %}
+                    {{contact_form|crispy}}
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section style="margin:50px;">
+    <div class="container text-center">
+        <div class="row">
+            <h2>How can we help you?</h2>
+            <p>
+                We are here, trying to provide the best services to you at your convenience. 
+                We are sorry for the inconvenience. 
+                Here we have provided an easier way for you to get in touch with us.
+            </p>
+            <div class="col-md-12">
+                <div class="container text-center mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body m-3">
+                                    <a href="https://maps.app.goo.gl/NUnRvkUZvBAh19My9" target="_blank"><i class="fas fa-map-marker-alt" style="font-size:48px;color:#13376d"></i></a>
+                                    <h4 style="color:#13376d"class="card-title mt-2 mb-4">OUR MAIN OFFICE</h4>
+                                    <p class="text-black-50">Kaimur, Bihar, India.</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3 mt-md-0">
+                            <div class="card">
+                                <div class="card-body m-3">
+                                    <i class="fas fa-phone-alt"style="font-size:48px;color:#13376d"></i>
+                                    <h4 style="color:#13376d"class="card-title mt-2 mb-4">PHONE NUMBER</h4>
+                                    <a class="text-black-50"href="tel:+916204227594">6204227594</a><br/>
+                                    <a class="text-black-50"href="tel:+917541985905">7541985905</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="container text-center mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body m-3">
+                                    <i class="fas fa-envelope"style="font-size:48px;color:#13376d"></i>
+                                    <h4 style="color:#13376d"class="card-title mt-2 mb-4">MAIL</h4>
+                                    <a class="text-black-50"href="mailto:admin@pabbajjacnc.com">admin@pabbajjacnc.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3 mt-md-0">
+                            <div class="card">
+                                <div class="card-body m-3">
+                                    <i class="fas fa-paper-plane" style="font-size:48px;color:#13376d"data-toggle="modal" data-target="#message"></i>
+                                    <h4 style="color:#13376d"class="card-title mt-2 mb-4">MESSAGE</h4>
+                                    <a class="text-black-50" data-toggle="modal" data-target="#message">Send</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block javascript %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#messageLabel").modal();
+        });
+
+        const alertBox = document.getElementById('alert-box');
+        const msgForm = document.getElementById('ajax-form');
+
+        const name = document.getElementById('id_name');
+        const number = document.getElementById('id_phone_number');
+        const message = document.getElementById('id_message');
+        const csrf = document.getElementsByName('csrfmiddlewaretoken');
+        
+        const handleAlerts = (type,text) => {
+        alertBox.innerHTML = `<div class="alert alert-${type}" role="alert">
+                                ${text}
+                            </div>`
+        }
+        const url = "";
+        console.log(csrf);
+
+        msgForm.addEventListener('submit',e => {
+            e.preventDefault();
+            const fd = new FormData();
+            fd.append('csrfmiddlewaretoken',csrf[0].value);
+            fd.append('name',name.value);
+            fd.append('number',number.value);
+            fd.append('message',message.value);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: fd,
+                cache: false,
+                contentType: false,
+                processData: false,
+                enctype: 'multipart/form-data',
+                success: function(response) {
+                    const sText = `We'll get in touch with you, ${response.name} as soon as possible.`;
+                    handleAlerts('success', sText)
+                    setTimeout(()=>{
+                        alertBox.innerHTML = "";
+                        name.value = "";
+                        number.value = "";
+                        message.value = "";
+                    }, 5000);
+                },
+                error: function(error){
+                    handleAlerts('danger', 'oops..something went wrong')
+                }
+            })
+        });
+        
+
+    </script>
+
+{% endblock javascript %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+<!-- {% bootstrap_css %} -->
+{% bootstrap_javascript jquery='full' %}
+{% block title %}
+REVIEW PAGE
+{% endblock title %}
+
+{% block content %}
+    <div class="container m-auto mx-auto">
+        <div class="row">
+            <div style="margin-top:20px;margin-bottom: 30px;" class="align-self-center align-items-center">
+                <div class="card">
+                    <h2  style="margin:10px;">Booking</h2>
+                    <hr>
+                    <div id="alert-box"></div>
+                    <form style="margin:29px;" id="ajax-form" autocomplete="off">
+                        {% csrf_token %}
+                        {% bootstrap_form  review_form %}
+                        <div class="card-footer mt-2">
+                            <button  type="submit" class="mx-5 m-5 btn main-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+    
+{% block javascript %}
+<script type="text/javascript">
+    const ajax_form = document.getElementById('ajax-form');
+    const alert_box = document.getElementById('alert-box');
+
+    const name = document.getElementById('id_name');
+    const gmail = document.getElementById('id_gmail');
+    const image = document.getElementById('id_image');
+    const message = document.getElementById('id_message');
+
+    const csrf = document.getElementsByName('csrfmiddlewaretoken');
+    const url = "";
+
+    const handleAlerts = (type, text) =>{
+    alert_box.innerHTML = `<div class="alert alert-${type}" role="alert">
+                            ${text}
+                        </div>`
+    }
+    console.log(csrf)
+
+    ajax_form.addEventListener('submit', e=>{
+        
+        e.preventDefault();
+
+        const formData = new FormData();
+        
+        formData.append('csrfmiddlewaretoken', csrf[0].value);
+        formData.append('name', name.value);
+        formData.append('gmail', gmail.value);
+        formData.append('image', image.files[0]);
+        formData.append('message', message.value);
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            enctype: 'multipart/form-data',
+            success: function(data) {
+                const sText = `Hey, ${data.name} thank you for your valuable feedback`;
+                handleAlerts('success', sText)
+                setTimeout(()=>{
+                    alert_box.innerHTML = "";
+                    name.value = "";
+                    gmail.value = "";
+                    image.value = "";
+                    message.value = "";
+                }, 3000);
+            },
+            error: function(error) {
+                handleAlerts('danger', 'oops..something went wrong')
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+        })
+
+    });
+</script>
+{% endblock javascript %}

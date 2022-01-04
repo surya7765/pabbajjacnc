@@ -1,4 +1,27 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block style %}
+<style>
+  .txt{
+    font-size:18px;
+  }
+  .representation{
+    height:30vh;
+  }
+
+  @media screen and (max-width: 425px) {
+    .txt{
+      font-size:12px;
+    }
+    .representation{
+      margin-bottom:-40px;
+    }
+  }
+</style>
+{% endblock style %}
+
+{% block content %}
 <!-- section top banner -->
 <section id="home">
   <!-- <div class="container-fluid px-0 top-banner"> -->
@@ -6,28 +29,31 @@
     id="carouselExampleControls"
     class="carousel slide"
     data-bs-ride="carousel"
-    style="height: 90vh"
+    style="height: 100vh;"
   >
     <div class="carousel-inner">
-      <div style="height: 90vh" class="carousel-item active">
+      <div style="height: 90vh;" class="carousel-item active" data-bs-interval="3000">
         <img
           src="{% static 'images/img1.jpeg' %}"
           class="d-block w-100"
-          alt="..."
+          alt="Slider 1"
+          style="height: 100%; width:100%; background-size: cover;background-position:center;"
         />
       </div>
-      <div style="height: 90vh" class="carousel-item">
+      <div style="height: 90vh;" class="carousel-item"data-bs-interval="3000">
         <img
           src="{% static 'images/img2.jpeg' %}"
           class="d-block w-100"
-          alt="..."
+          alt="Slider 2"
+          style="height: 100%; width:100%; background-size: cover;background-position:center;"
         />
       </div>
-      <div style="height: 90vh" class="carousel-item">
+      <div style="height: 90vh;" class="carousel-item"data-bs-interval="3000">
         <img
           src="{% static 'images/img3.jpeg' %}"
           class="d-block w-100"
-          alt="..."
+          alt="Slider 3"
+          style="height: 100%; width:100%; background-size: cover;background-position:center;"
         />
       </div>
     </div>
@@ -70,7 +96,7 @@
 
 <section id="our-Product">
     <div class="container mt-5 mb-5  products "><br/>
-      <h2 class="text-center"><span style="color:#404354"> Our</span> <span style="color:#A82C48"> Products</span></h2><br/>
+      <h2 class="text-center"><span style="color:#404354"> Our</span> <span style="color:#0d56c4"> Products</span></h2><br/>
         <div class="row g-1">
             {% for product in products %}
               <div class="col-md-4">
@@ -82,6 +108,11 @@
                                           src="{{product.image1.url}}" />
                                 </div>
                                 <div class="swiper-slide">
+                                  <div style="height:319px;" class="youtube-video-place embed-responsive embed-responsive-4by3 " data-yt-url="{{product.video_url}}">
+                                    <img style="height:319px;" src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png" async class="play-youtube-video">
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
                                     <img style="height: 320px;"
                                           src="{{product.image2.url}}" />
                                 </div>
@@ -89,6 +120,7 @@
                                     <img style="height: 320px;"
                                           src="{{product.image3.url}}" />
                                 </div>
+                                
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -145,7 +177,7 @@
           <h2>
             We pride ourselves for making best quality product in the market.
           </h2>
-          <p>
+          <p style="font-family:sans-serif">
             Be recognized as a pre-eminent cnc engraving and carving machinary &
             robotic arm manufacturers that fully engages our people,passionately
             embraces new idea, seeks out revolutionary technologies and
@@ -160,17 +192,17 @@
       <div class="row align-items-center">
         <div class="col-lg-5 col-md-12 text-sec mb-lg-0 mb-5">
           <h2>
-            We make everything by our own with the best possible equipments
+            Why to join US:
           </h2>
-          <p>
+          <p style="font-family:sans-serif">
             Our ethical bussiness practices and commited approach have us the
-            faith of our clients.
+            faith of our clients and believe in Total Quality. Quality is not just a benchmark, it’s an ongoing process of thriving for excellence and we have inculcated the steps to achieve best quality in our services and products. Our policy is to produce cost-effective, timely and customer delighting solutions.
           </p>
           <ul class="list-unstyled py-3">
-            <li>Affordable and Competative prices.</li>
-            <li>Delivery on time.</li>
-            <li>Superior finish quality of products.</li>
-            <li>Client - Centric product design.</li>
+            <li style="font-family:sans-serif">Affordable and Competative prices.</li>
+            <li style="font-family:sans-serif">Delivery on time.</li>
+            <li style="font-family:sans-serif">Superior finish quality of products.</li>
+            <li style="font-family:sans-serif">Client - Centric product design.</li>
           </ul>
         </div>
         <div class="col-lg-7 col-md-12">
@@ -202,7 +234,33 @@
   </div>
 </section>
 
-<!-- chirayu yaha apna product page ka code dal dio -->
+{% comment %} <section class="company_details mt-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Why to join US:</h2>
+        <div class="col-md-10">
+          <p style="text-align: justify;"> 
+              Our mission is to provide efficient quality engineering product and services with advanced technology to our customers in affordable price.
+              We strive to grow our business with the same honesty and integrity. We use to design our products with sustainability and great features for all.
+              We are committed to provide our customers with the best quality products and services.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>Pabbajja Technologies:</h2>
+        <div class="col-md-10">
+          <p style="text-align: justify">
+              Our mission is to provide efficient quality engineering product and services with advanced technology to our customers in affordable price.
+              We strive to grow our business with the same honesty and integrity. We use to design our products with sustainability and great features for all.
+              We are committed to provide our customers with the best quality products and services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
 
 <!-- review sectiom -->
 
@@ -216,7 +274,7 @@
         <div class="col-sm-12 col-lg-10 offset-lg-1">
           <div
             id="carouselExampleDark"
-            class="carousel slide"
+            class="carousel slide carousel-fade" id="fade-quote-carousel" data-bs-interval="3000"
             data-bs-ride="carousel"
           >
             <div class="carousel-indicators">
@@ -242,15 +300,24 @@
               ></button>
             </div>
             <div class="carousel-inner">
-              {% for review in review %}
-              <div class="carousel-item active">
-                <div class="carousel-caption">
-                  <img src="{{review.image.url}}" />
-                  <p>"{{review.message}}"</p>
-                  <h5>{{review.UserName}}</h5>
-                </div>
+              {% for review in reviews %}
+                {% if forloop.counter == 1 %}
+                <div class="carousel-item active">
+                {% else %}
+                  <div class="carousel-item">
+                  {% endif %}
+                      <div class="carousel-caption">
+                        {% if review.image %}
+                          <img src="{{review.image.url}}">
+                        {% else %}
+                          <img src="{% static 'images/robot.jpg' %}">
+                        {% endif %}
+                        <h5 style="color:#f7d4db; font-size:20px;">{{review.name}}</h5>
+                        <p>{{review.message}}</p>
+                    </div>
+                  </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
           </div>
         </div>
@@ -259,4 +326,42 @@
   </div>
 </section>
 
+
+<section class="representation">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4 col-4 col-sm-4">
+        <img src="{% static 'images/vel.jpg' %}" class="img-fluid w-auto h-25"/>
+        <h2 class="txt">R&D by VEL Tech TBI</h2>
+      </div>
+      <div class="col-md-4 col-4 col-sm-4">
+        <img src="{% static 'images/indiamart.jpg' %}" class="img-fluid w-auto h-25"/>
+        <h2 class="txt">Marketed by IndiaMart</h2>
+      </div>
+      <div class="col-md-4 col-4 col-sm-4">
+        <img src="{% static 'images/Vakilsearch.png' %}" class="img-fluid w-auto h-25"/>
+        <h2 class="txt">Legal Handle by VakilSearch</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 {% endblock content %}
+
+{% block javascript %}
+
+<script>
+  var video_wrapper = $('.youtube-video-place');
+  //  Check to see if youtube wrapper exists
+  if(video_wrapper.length){
+  // If user clicks on the video wrapper load the video.
+  $('.play-youtube-video').on('click', function(){
+    /* Dynamically inject the iframe on demand of the user.
+    Pull the youtube url from the data attribute on the wrapper element. */
+    video_wrapper.html('<iframe height="319" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' + video_wrapper.data('yt-url') + '"></iframe>');
+  });
+  }
+</script>
+
+{% endblock javascript %}

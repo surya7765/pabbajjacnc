@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'cnc',
     'tinymce',
     'storages',
+    'crispy_forms',
+    'bootstrap4',
 ]
 
 

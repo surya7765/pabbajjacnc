@@ -1,6 +1,9 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% block title %}
+PRODUCTS PAGE
+{% endblock title %}
 {% block content %}
-<section id="our-Product" style="margin-top:110px;">
+<section id="our-Product">
     <div class="container mt-5 mb-5"><br/>
         <div class="row g-1">
             {% for product in products %}
@@ -11,6 +14,11 @@
                                 <div class="swiper-slide">
                                     <img style="height: 320px;"
                                           src="{{product.image1.url}}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <div style="height:319px;" class="youtube-video-place embed-responsive embed-responsive-4by3 " data-yt-url="{{product.video_url}}">
+                                    <img style="height:319px;" src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png" async class="play-youtube-video">
+                                  </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <img style="height: 320px;"
@@ -44,10 +52,12 @@
                                   {% else %}
                                     <h6 class="mb-0 text-danger">Not available</h6>
                                   {% endif %}
-
                               </div>
                           </div>
-                          <div class="buy mt-3"><a href="{% url 'product-detail' product.id %}"><button class="btn btn-primary btn-block main-btn" type="button">More</button></a></div>
+                          <div class="buy mt-3">
+                              <a href="{% url 'product-book' product.id %}"><button class="btn btn-primary btn-block main-btn mx-3" type="button">Get Latest Price</button></a>
+                              <a href="{% url 'product-detail' product.id %}"><button class="btn btn-primary btn-block white-btn my-2 mx-5 mx-md-3" type="button">Read More</button></a>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -72,4 +82,21 @@
         {% endif %} 
     </div>
 </section>
-{% endblock %}
+{% endblock content %}
+
+{% block javascript %}
+
+<script>
+  var video_wrapper = $('.youtube-video-place');
+  //  Check to see if youtube wrapper exists
+  if(video_wrapper.length){
+  // If user clicks on the video wrapper load the video.
+  $('.play-youtube-video').on('click', function(){
+    /* Dynamically inject the iframe on demand of the user.
+    Pull the youtube url from the data attribute on the wrapper element. */
+    video_wrapper.html('<iframe height="319" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' + video_wrapper.data('yt-url') + '"></iframe>');
+  });
+  }
+</script>
+
+{% endblock javascript %}

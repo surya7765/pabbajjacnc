@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pabbajja technologies - {{product.title}} pdf</title>
+
+    <!-- Bootsrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  </head>
+
+  <body>
+
+    <section style="padding-top: 170px; padding-bottom: 100px">
+      <div class="container">
+        <div class="row">
+            <h2 style="font-size:36px;">{{product.title}}</h2>
+          <div class="col-md-6">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="{{ product.image1.url }}"/>
+                </div>
+                <div class="swiper-slide">
+                  <img src="{{ product.image2.url }}"/>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="col-md-6" style="margin-top:50px;">
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Item Details</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Item Name</td>
+                    <td>{{product.title}}</td>
+                  </tr>
+                  <tr>
+                    <td>Model Number</td>
+                    <td>{{product.model_number}}</td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>{{product.price}}</td>
+                  </tr>
+                  <tr>
+                    <td>Availability</td>
+                    {% if product.availability == True %}
+                    <td class="mb-0 text-success">Available</td>
+                    {% else %}
+                    <td class="mb-0 text-danger">Not available</td>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <td>Weight</td>
+                    <td>{{product.weight}}</td>
+                  </tr>
+                  <tr>
+                    <td>Automatic</td>
+                    {% if product.automatic == True %}
+                    <td class="mb-0 text-success">Yes</td>
+                    {% else %}
+                    <td class="mb-0 text-danger">No</td>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <td>PLC Control</td>
+                    {% if product.plc_control == True %}
+                    <td class="mb-0 text-success">Yes</td>
+                    {% else %}
+                    <td class="mb-0 text-danger">No</td>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <td>Computerized</td>
+                    {% if product.computerized == True %}
+                    <td class="mb-0 text-success">Yes</td>
+                    {% else %}
+                    <td class="mb-0 text-danger">No</td>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <td>Supply Ability</td>
+                    {% if product.supply_ability == True %}
+                    <td class="mb-0 text-success">Yes</td>
+                    {% else %}
+                    <td class="mb-0 text-danger">No</td>
+                    {% endif %}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <h2 class="mt-5 mb-3">Detailed Specification</h2>
+          <div class="">
+            <p class="article-content">{{ product.detail|safe }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    type="text/javascript"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Ionicons -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</html>

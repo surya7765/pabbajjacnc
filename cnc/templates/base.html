@@ -1,12 +1,15 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNC MACHINE</title>
-
+    <title>PABBAJJA TECHNOLOGIES | 
+      {% block title %}  
+      {% endblock title %}
+    </title>
     <!-- Bootsrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -31,17 +34,22 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    
+    {% block style %}
+    
+    {% endblock style %}
+
   </head>
 
   <body>
     <!-- header section -->
     <header>
-      <nav class="navbar navbar-expand-lg navigation-wrap fixed-top">
+      <nav class="navbar navbar-expand-lg navigation-wrap"style="background-color: #4071bc;">
         <div class="container">
           <a class="navbar-brand" href="{% url 'home' %}">
             <h2 id="navbar-inside">pabbajja technologies Pvt. Ltd.</h2>
             <p id="navbar-inside2">
-              <span>&#128222;</span> 9897657433 |
+              <span style="color: #a4c3f2;">&#128222; 6204227594 |  </span>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +83,7 @@
                     ></path>
                   </g>
                 </svg>
-                TrustSEAL Verified
+                <span style="color: #a4c3f2;">TrustSEAL Verified</span>
               </span>
             </p>
           </a>
@@ -91,8 +99,8 @@
           >
             <i class="fas fa-stream navbar-toggler-icon"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse show" id="navbarText" style="background-color: #4071bc;">
+            <ul class="navbar-nav ms-auto"style="background-color: #4071bc;">
               <li class="nav-item">
                 <a
                   class="nav-link active"
@@ -108,7 +116,7 @@
                 <a class="nav-link" href="{% url 'about' %}">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#review">Reviews</a>
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
               </li>
 
               <li class="nav-item">
@@ -134,92 +142,91 @@
 
     <!-- Footer -->
 
-    <footer class="page-footer font-small"style="background-color: #c15169; color: white">
+    <footer class="page-footer font-small" style="background-color: #123366; color: white; bottom: 0; width: 100%;">
       <!-- Footer Elements -->
       <div class="container">
         <div class="row">
-          <div class="col-4 py-3">
-            <div class=" flex-center">
-              <h5 class="text-black">Address</h5>
+          <div class="col-md-3 col-6 py-3">
+            <div class="flex-center">
+              <h5 class="text-white">Address</h5>
               <hr />
               <br />
-              Plot No.: 143,Chand(Majhagai)<br />
-              Dist: Kaimur(Bhabua)<br />
-              Pin code: 821106<br />
-              Bihar,India<br />
-              +91 7541985905<br />
+              <address>
+              PL.143,KH 147,Vill-Majhgain,<br/>Block-Chand,Bhabua,<br/>Kaimur,Bihar,India.<br/>
+              +91 6204227594<br />
+              </address>
             </div>
           </div>
-
-          <div class="col-4 py-3">
-            <div class=" flex-center">
-              <h5 class="text-black">Quick links</h5>
+          <div class="col-md-3 col-6 py-3">
+            <div class="flex-center">
+              <h5 class="text-white">Quick links</h5>
               <hr />
               <br />
-              <a
-                class="nav-link text-white active"
-                aria-current="page"
-                href="{% url 'home' %}"
-                >Home</a
-              >
+              <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
               <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
-              <a class="nav-link text-white" href="{% url 'product' %}"
-                >Products</a
-              >
-              <a class="nav-link text-white" href="#contact">Contact Us</a>
+              <a class="nav-link text-white" href="{% url 'product' %}">Products</a>
+              <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
             </div>
           </div>
-          <div class="col-4 py-3">
-            <div class=" flex-center">
-              <h5 class="text-black">visit us</h5>
+          <div class="col-md-3 col-6 py-3">
+            <div class="flex-center">
+              <h5 class="text-white">Follow</h5>
               <hr />
               <br />
               <!-- Facebook -->
-              <a class="fb-ic">
-                <i class="fab fa-facebook-f fa-lg fa-2x"> </i>
-              </a>
-              <!-- Google +-->
-              <a class="gplus-ic">
-                <i
-                  class="
-                    fab
-                    fa-google-plus-g fa-lg
-                    white-text
-                    mr-md-5 mr-3
-                    fa-2x
-                  "
-                >
-                </i>
-              </a>
-              <!--Instagram-->
-              <a class="ins-ic">
-                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <a class="fb-ic"style="color:#fff;" href="" target="_blank">
+                    <i class="fab fa-facebook-f fa-lg fa-2x"></i>
+                  </a>
+                </div>
+                <!-- Youtube +-->
+                <div class="col-md-3 col-3">
+                  <a target="_blank" class="yt-ic" style="color:#fff;" href="https://www.youtube.com/channel/UCeUrc414eze8PJtMOu-w1_w">
+                    <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                  </a>
+                </div>
+                <!--Instagram-->
+                <div class="col-md-3 col-3">
+                  <a  target="_blank" class="ins-ic"style="color:#fff;" href="https://www.instagram.com/pabbajja_technologies/">
+                    <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 py-3">
+            <div class="flex-center">
+              <h5 class="text-white">Reach</h5>
+              <hr />
+              <br />
+              <p class="text-white">We would love to hear from you.<br/>Cause your words matters for us!</p>
+              <a href="{% url 'review' %}">
+                <button type="button" class="white-btn btn">
+                  Feedback
+                </button>
               </a>
             </div>
           </div>
+          
         </div>
       </div>
-      <!-- Footer Elements -->
-
       <!-- Copyright -->
-      <div class="footer-copyright" style="border-top: grey 1.5px solid">
-        <div class="container">
-          <p class="grey-text">
-            Copyright Pabbajja Technologies © 2021. All rights reserved.
-          </p>
-        </div>
+    <div class="footer-copyright text-md-center" style="border-top: black 1.5px solid; background-color:#1a345b;height:60px">
+      <div class="container">
+        <p style="color:#4a7dc9;">
+          Copyright Pabbajja Technologies © <span id="display_year"></span>. All rights reserved.
+        </p>
       </div>
+    </div>
     </footer>
-
+    
+    
     <!-- footer -->
     <!-- faq -->
 
     <!-- js libraries -->
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-      type="text/javascript"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -229,12 +236,6 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
     <script
@@ -248,11 +249,13 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- own Js -->
-    <script src="{% static 'js/main.js' %}"></script>
     <script>
       $(".collapse").collapse({
         toggle: true,
+      });
+      document.getElementById('display_year').innerHTML = new Date().getFullYear();
+      $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
       });
       var swiper = new Swiper(".mySwiper", {
         grabCursor: true,
@@ -273,6 +276,10 @@
         },
       });
     </script>
+    
+    {% block javascript %}
+    
+    {% endblock javascript %}
 
     <!-- Ionicons -->
     <script
