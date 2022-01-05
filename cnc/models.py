@@ -88,7 +88,7 @@ class Book(models.Model):
     message = models.TextField(null=True)
 
     def __str__(self):
-        return self.namegit add --all
+        return self.name
 
 
 
