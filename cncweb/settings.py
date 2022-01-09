@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-7cuoq4se=1(t=egz%zn$c6*9g=5gi3ue@60evbi8rwtukst)b3
 # SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0. 0.1', 'localhost', 'pabbajja.herokuapp.com']
 
 # TinyMce
 TINYMCE_DEFAULT_CONFIG = {

@@ -1,29 +1,24 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-{% load bootstrap4 %}
-<!-- {% bootstrap_css %} -->
-{% bootstrap_javascript jquery='full' %}
-{% block title %}
-BOOKING PAGE
-{% endblock title %}
-
-{% block content %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% load bootstrap4 %} 
+{% bootstrap_javascript jquery='full' %} {% block title %} BOOKING PAGE 
+{% endblock title %} {% block content %}
 <div class="container m-auto mx-auto">
-    <div class="row">
-        <div style="margin-top:20px;margin-bottom: 30px;" class="align-self-center align-items-center">
-            <div class="card">
-                <h2  style="margin:10px;">Booking</h2>
-                <hr>
-                <div id="alert-book-box"></div>
-                <form style="margin:29px;"  method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% bootstrap_form  form %}
-                    <div class="card-footer mt-2">
-                        <button  type="submit" class="mx-5 m-5 btn main-btn">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <div class="row">
+    <div
+      style="margin-top: 20px; margin-bottom: 30px"
+      class="align-self-center align-items-center"
+    >
+      <div class="card">
+        <h2 style="margin: 10px">Booking</h2>
+        <hr />
+        <div id="alert-book-box"></div>
+        <form style="margin: 29px" method="POST" enctype="multipart/form-data">
+          {% csrf_token %} {% bootstrap_form form %}
+          <div class="card-footer mt-2">
+            <button type="submit" class="mx-5 m-5 btn main-btn">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock content %}

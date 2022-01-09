@@ -1,59 +1,70 @@
-{% extends 'base.html' %} 
-{% load static %}
-
-{% block style %}
+{% extends 'base.html' %} {% load static %} {% block style %}
 <style>
-  .txt{
-    font-size:18px;
+  .txt {
+    font-size: 18px;
   }
-  .representation{
-    height:30vh;
+  .representation {
+    height: 30vh;
   }
-
   @media screen and (max-width: 425px) {
-    .txt{
-      font-size:12px;
+    .txt {
+      font-size: 12px;
     }
-    .representation{
-      margin-bottom:-40px;
+    .representation {
+      margin-bottom: -40px;
     }
   }
 </style>
-{% endblock style %}
-
-{% block content %}
-<!-- section top banner -->
+{% endblock style %} {% block content %}
 <section id="home">
-  <!-- <div class="container-fluid px-0 top-banner"> -->
   <div
     id="carouselExampleControls"
     class="carousel slide"
     data-bs-ride="carousel"
-    style="height: 100vh;"
+    style="height: 100vh"
   >
     <div class="carousel-inner">
-      <div style="height: 90vh;" class="carousel-item active" data-bs-interval="3000">
-        <img
-          src="{% static 'images/img1.jpeg' %}"
-          class="d-block w-100"
-          alt="Slider 1"
-          style="height: 100%; width:100%; background-size: cover;background-position:center;"
-        />
-      </div>
-      <div style="height: 90vh;" class="carousel-item"data-bs-interval="3000">
-        <img
-          src="{% static 'images/img2.jpeg' %}"
-          class="d-block w-100"
-          alt="Slider 2"
-          style="height: 100%; width:100%; background-size: cover;background-position:center;"
-        />
-      </div>
-      <div style="height: 90vh;" class="carousel-item"data-bs-interval="3000">
+      <div
+        style="height: 90vh"
+        class="carousel-item active"
+        data-bs-interval="3000"
+      >
         <img
           src="{% static 'images/img3.jpeg' %}"
           class="d-block w-100"
+          alt="Slider 1"
+          style="
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          "
+        />
+      </div>
+      <div style="height: 90vh" class="carousel-item" data-bs-interval="3000">
+        <img
+          src="{% static 'images/img1.jpg' %}"
+          class="d-block w-100"
+          alt="Slider 2"
+          style="
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          "
+        />
+      </div>
+      <div style="height: 90vh" class="carousel-item" data-bs-interval="3000">
+        <img
+          src="{% static 'images/img2.jpeg' %}"
+          class="d-block w-100"
           alt="Slider 3"
-          style="height: 100%; width:100%; background-size: cover;background-position:center;"
+          style="
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          "
         />
       </div>
     </div>
@@ -76,89 +87,81 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <!-- <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-6">
-                    <h1>Best CNC Machine Needed #Then trust us</h1>
-                    <p>Our Mission is to provide efficient quality engineering product and services with advance
-                        technology to customers in affordable prices.</p>
-                    <div class="mt-4">
-                        <button class="main-btn">Book Now <i class="fas fa-shopping-basket ps-3"></i></button>
-                        <button class="white-btn ms-lg-4 mt-lg-0 mt-4">Book Now <i
-                                class="fas fa-angle-right ps-3"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-  <!-- /div> -->
 </section>
-
-
 <section id="our-Product">
-    <div class="container mt-5 mb-5  products "><br/>
-      <h2 class="text-center"><span style="color:#404354"> Our</span> <span style="color:#0d56c4"> Products</span></h2><br/>
-        <div class="row g-1">
-            {% for product in products %}
-              <div class="col-md-4">
-                  <div class="p-card" style="padding: 15px;">
-                      <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img style="height: 320px;"
-                                          src="{{product.image1.url}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                  <div style="height:319px;" class="youtube-video-place embed-responsive embed-responsive-4by3 " data-yt-url="{{product.video_url}}">
-                                    <img style="height:319px;" src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png" async class="play-youtube-video">
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img style="height: 320px;"
-                                          src="{{product.image2.url}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img style="height: 320px;"
-                                          src="{{product.image3.url}}" />
-                                </div>
-                                
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                      <br/>
-                      <div class="p-details">
-                          <div class="d-flex justify-content-between align-items-center mx-2">
-                              <a href="{% url 'product-detail' product.id %}"><h5>{{product.title}}</h5></a><span>&#8377;{{product.price}}</span>
-                          </div>
-                          <div class="mx-2">
-                              <hr class="line">
-                          </div>
-                          <div class="d-flex justify-content-between mt-2 spec mx-2">
-                              <div class="d-flex flex-column align-items-center">
-                                  <h6 class="mb-0">Model no.</h6><span>{{product.model_number}}</span>
-                              </div>
-                              <div class="d-flex flex-column align-items-center">
-                                  <h6 class="mb-0">Weight</h6><span>{{product.weight}}</span>
-                              </div>
-                              <div class="d-flex flex-column align-items-center">
-                                  {% if product.availability == True %}
-                                    <h6 class="mb-0 text-success">Available</h6>
-                                  {% else %}
-                                    <h6 class="mb-0 text-danger">Not available</h6>
-                                  {% endif %}
-
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+  <div class="container mt-2 products">
+    <br />
+    <h1 class="text-center">
+      <span style="color: #404354"> Our</span>
+      <span style="color: #0d56c4"> Products</span>
+    </h1>
+    <br />
+    <div class="row g-1">
+      {% for product in products %}
+      <div class="col-md-4">
+        <div class="p-card" style="padding: 15px">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img style="height: 320px" src="{{product.image1.url}}" />
               </div>
-            {% endfor %}
+              <div class="swiper-slide">
+                <div
+                  style="height: 319px"
+                  class="youtube-video-place embed-responsive embed-responsive-4by3"
+                  data-yt-url="{{product.video_url}}"
+                >
+                  <img
+                    style="height: 319px"
+                    src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png"
+                    async
+                    class="play-youtube-video"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img style="height: 320px" src="{{product.image2.url}}" />
+              </div>
+              <div class="swiper-slide">
+                <img style="height: 320px" src="{{product.image3.url}}" />
+              </div>
+            </div>
+            <div class="swiper-pagination text-primary"></div>
+          </div>
+          <br />
+          <div class="p-details">
+            <div class="d-flex justify-content-between align-items-center mx-2">
+              <a href="{% url 'product-detail' product.id %}"
+                ><h5>{{product.title}}</h5></a
+              ><span>&#8377;{{product.price}}</span>
+            </div>
+            <div class="mx-2">
+              <hr class="line" />
+            </div>
+            <div class="d-flex justify-content-between mt-2 spec mx-2">
+              <div class="d-flex flex-column align-items-center">
+                <h6 class="mb-0">Model no.</h6>
+                <span>{{product.model_number}}</span>
+              </div>
+              <div class="d-flex flex-column align-items-center">
+                <h6 class="mb-0">Weight</h6>
+                <span>{{product.weight}}</span>
+              </div>
+              <div class="d-flex flex-column align-items-center">
+                {% if product.availability == True %}
+                <h6 class="mb-0 text-success">Available</h6>
+                {% else %}
+                <h6 class="mb-0 text-danger">Not available</h6>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
-
-
-<!-- about section -->
-
 <section id="about">
   <div class="about-section wrapper">
     <div class="container">
@@ -172,37 +175,45 @@
             />
           </div>
         </div>
-
         <div class="col-lg-5 col-md-12 text-sec">
-          <h2>
+          <h1>
             We pride ourselves for making best quality product in the market.
-          </h2>
-          <p style="font-family:sans-serif">
+          </h1>
+          <p style="font-family: sans-serif">
             Be recognized as a pre-eminent cnc engraving and carving machinary &
             robotic arm manufacturers that fully engages our people,passionately
             embraces new idea, seeks out revolutionary technologies and
             available at affordable prices to our customers.
           </p>
-          <a href="{% url 'about' %}"><button class="main-btn mt-4">Learn More</button></a>
+          <a href="{% url 'about' %}"
+            ><button class="main-btn mt-4">Learn More</button></a
+          >
         </div>
       </div>
     </div>
-    <!-- added about sec part2 -->
     <div class="conatiner cnc-type">
       <div class="row align-items-center">
         <div class="col-lg-5 col-md-12 text-sec mb-lg-0 mb-5">
-          <h2>
-            Why to join US:
-          </h2>
-          <p style="font-family:sans-serif">
+          <h1>Why to join US:</h1>
+          <p style="font-family: sans-serif">
             Our ethical bussiness practices and commited approach have us the
-            faith of our clients and believe in Total Quality. Quality is not just a benchmark, it’s an ongoing process of thriving for excellence and we have inculcated the steps to achieve best quality in our services and products. Our policy is to produce cost-effective, timely and customer delighting solutions.
+            faith of our clients and believe in Total Quality. Quality is not
+            just a benchmark, it’s an ongoing process of thriving for excellence
+            and we have inculcated the steps to achieve best quality in our
+            services and products. Our policy is to produce cost-effective,
+            timely and customer delighting solutions.
           </p>
           <ul class="list-unstyled py-3">
-            <li style="font-family:sans-serif">Affordable and Competative prices.</li>
-            <li style="font-family:sans-serif">Delivery on time.</li>
-            <li style="font-family:sans-serif">Superior finish quality of products.</li>
-            <li style="font-family:sans-serif">Client - Centric product design.</li>
+            <li style="font-family: sans-serif">
+              Affordable and Competative prices.
+            </li>
+            <li style="font-family: sans-serif">Delivery on time.</li>
+            <li style="font-family: sans-serif">
+              Superior finish quality of products.
+            </li>
+            <li style="font-family: sans-serif">
+              Client - Centric product design.
+            </li>
           </ul>
         </div>
         <div class="col-lg-7 col-md-12">
@@ -214,67 +225,39 @@
     </div>
   </div>
 </section>
-<!-- about sec part 3 -->
 <section id="sec-3">
   <div class="section-3">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="text-content">
-            <h2>
+            <h1 class="text-white">
               When you need a perfect machine then you don't compormise with the
               quality .
-            </h2>
+            </h1>
             <p class="text-white">#CONNECT WITH US.</p>
-            <button class="main-btn mt-4">Read More</button>
+            <a href="{% url 'contact' %}"
+              ><button class="main-btn mt-4">Read More</button></a
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-{% comment %} <section class="company_details mt-5 mb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Why to join US:</h2>
-        <div class="col-md-10">
-          <p style="text-align: justify;"> 
-              Our mission is to provide efficient quality engineering product and services with advanced technology to our customers in affordable price.
-              We strive to grow our business with the same honesty and integrity. We use to design our products with sustainability and great features for all.
-              We are committed to provide our customers with the best quality products and services.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h2>Pabbajja Technologies:</h2>
-        <div class="col-md-10">
-          <p style="text-align: justify">
-              Our mission is to provide efficient quality engineering product and services with advanced technology to our customers in affordable price.
-              We strive to grow our business with the same honesty and integrity. We use to design our products with sustainability and great features for all.
-              We are committed to provide our customers with the best quality products and services.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> {% endcomment %}
-
-
-<!-- review sectiom -->
-
 <section id="review" class="mt-5 mb-5">
   <div class="wrapper review-section">
     <div class="container text-center">
       <div class="text-center pb-4">
-        <h2>Customer Reviews</h2>
+        <h1 class="text-white">Customer Reviews</h1>
       </div>
       <div class="row">
         <div class="col-sm-12 col-lg-10 offset-lg-1">
           <div
             id="carouselExampleDark"
-            class="carousel slide carousel-fade" id="fade-quote-carousel" data-bs-interval="3000"
+            class="carousel slide carousel-fade"
+            id="fade-quote-carousel"
+            data-bs-interval="3000"
             data-bs-ride="carousel"
           >
             <div class="carousel-indicators">
@@ -300,22 +283,23 @@
               ></button>
             </div>
             <div class="carousel-inner">
-              {% for review in reviews %}
-                {% if forloop.counter == 1 %}
-                <div class="carousel-item active">
+              {% for review in reviews %} {% if forloop.counter == 1 %}
+              <div class="carousel-item active">
                 {% else %}
-                  <div class="carousel-item">
+                <div class="carousel-item">
                   {% endif %}
-                      <div class="carousel-caption">
-                        {% if review.image %}
-                          <img src="{{review.image.url}}">
-                        {% else %}
-                          <img src="{% static 'images/robot.jpg' %}">
-                        {% endif %}
-                        <h5 style="color:#f7d4db; font-size:20px;">{{review.name}}</h5>
-                        <p>{{review.message}}</p>
-                    </div>
+                  <div class="carousel-caption">
+                    {% if review.image %}
+                    <img src="{{review.image.url}}" />
+                    {% else %}
+                    <img src="{% static 'images/robot.jpg' %}" />
+                    {% endif %}
+                    <h5 style="color: #f7d4db; font-size: 20px">
+                      {{review.name}}
+                    </h5>
+                    <p>{{review.message}}</p>
                   </div>
+                </div>
                 {% endfor %}
               </div>
             </div>
@@ -325,43 +309,44 @@
     </div>
   </div>
 </section>
-
-
 <section class="representation">
   <div class="container text-center">
     <div class="row">
       <div class="col-md-4 col-4 col-sm-4">
-        <img src="{% static 'images/vel.jpg' %}" class="img-fluid w-auto h-25"/>
-        <h2 class="txt">R&D by VEL Tech TBI</h2>
+        <img
+          src="{% static 'images/vel.jpg' %}"
+          class="img-fluid w-auto h-25"
+        />
+        <h1 class="txt">R&D by VEL Tech TBI</h1>
       </div>
       <div class="col-md-4 col-4 col-sm-4">
-        <img src="{% static 'images/indiamart.jpg' %}" class="img-fluid w-auto h-25"/>
-        <h2 class="txt">Marketed by IndiaMart</h2>
+        <img
+          src="{% static 'images/indiamart.jpg' %}"
+          class="img-fluid w-auto h-25"
+        />
+        <h1 class="txt">Marketed by IndiaMart</h1>
       </div>
       <div class="col-md-4 col-4 col-sm-4">
-        <img src="{% static 'images/Vakilsearch.png' %}" class="img-fluid w-auto h-25"/>
-        <h2 class="txt">Legal Handle by VakilSearch</h2>
+        <img
+          src="{% static 'images/Vakilsearch.png' %}"
+          class="img-fluid w-auto h-25"
+        />
+        <h1 class="txt">Legal Handle by VakilSearch</h1>
       </div>
     </div>
   </div>
 </section>
-
-
-{% endblock content %}
-
-{% block javascript %}
-
+{% endblock content %} {% block javascript %}
 <script>
-  var video_wrapper = $('.youtube-video-place');
-  //  Check to see if youtube wrapper exists
-  if(video_wrapper.length){
-  // If user clicks on the video wrapper load the video.
-  $('.play-youtube-video').on('click', function(){
-    /* Dynamically inject the iframe on demand of the user.
-    Pull the youtube url from the data attribute on the wrapper element. */
-    video_wrapper.html('<iframe height="319" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' + video_wrapper.data('yt-url') + '"></iframe>');
-  });
-  }
+  /*<![CDATA[*/ var video_wrapper = $(".youtube-video-place");
+  if (video_wrapper.length) {
+    $(".play-youtube-video").on("click", function () {
+      video_wrapper.html(
+        '<iframe height="319" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' +
+          video_wrapper.data("yt-url") +
+          '"></iframe>'
+      );
+    });
+  } /*]]>*/
 </script>
-
 {% endblock javascript %}

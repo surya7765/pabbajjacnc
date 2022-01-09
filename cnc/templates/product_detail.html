@@ -1,140 +1,152 @@
-{% extends 'base.html' %} 
-{% load static %}
-{% block title %}
-PRODUCT - {{object.title}}
-{% endblock title %}
-{% block content %}
-
-<section style="padding-top:50px; padding-bottom:100px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{{ object.image1.url }}" />
-                        </div>
-                        <div class="swiper-slide">
-                            <div style="height:479px;" class="youtube-video-place embed-responsive embed-responsive-4by3 " data-yt-url="{{product.video_url}}">
-                                <img style="height:479px;" src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png" async class="play-youtube-video">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ object.image2.url }}" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ object.image3.url }}" />
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+{% extends 'base.html' %} {% load static %} {% block title %} PRODUCT -
+{{object.title}} {% endblock title %} {% block content %}
+<section style="padding-top: 50px; padding-bottom: 100px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="{{ object.image1.url }}" />
             </div>
-            <div class="col-md-6">
-                <h2> {{object.title}}
-                    <span style="font-size:16px;">
-                        <a target="_blank" style="margin-left:5px;" href="{% url 'product-pdf' object.id %}"><i class="fa fa-file-pdf-o" style="font-size:24px;color:black"></i>PDF</a>
-                    </span>
-                </h2>
-                <div>
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th scope="col">Item Details</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                        <td>Item Name</td>
-                            <td>{{object.title}}</td>
-                        </tr>
-                        <tr>
-                        <td>Model Number</td>
-                            <td>{{object.model_number}}</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>{{object.price}} </td>
-                        </tr>
-                        <tr>
-                            <td>Availability</td>
-                            {% if object.availability == True %}
-                                <td class="mb-0 text-success">Available</td>
-                            {% else %}
-                                <td class="mb-0 text-danger">Not available</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <td>Weight</td>
-                            <td>{{object.weight}} </td>
-                        </tr>
-                        <tr>
-                            <td>Automatic</td>
-                            {% if object.automatic == True %}
-                                <td class="mb-0 text-success">Yes</td>
-                            {% else %}
-                                <td class="mb-0 text-danger">No</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <td>PLC Control</td>
-                            {% if object.plc_control == True %}
-                                <td class="mb-0 text-success">Yes</td>
-                            {% else %}
-                                <td class="mb-0 text-danger">No</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <td>Computerized</td>
-                            {% if object.computerized == True %}
-                                <td class="mb-0 text-success">Yes</td>
-                            {% else %}
-                                <td class="mb-0 text-danger">No</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <td>Supply Ability</td>
-                            {% if object.supply_ability == True %}
-                                <td class="mb-0 text-success">Yes</td>
-                            {% else %}
-                                <td class="mb-0 text-danger">No</td>
-                            {% endif %}
-                        </tr>
-                    </tbody>
-                  </table>
-                </div>
+            <div class="swiper-slide">
+              <div
+                style="height: 479px"
+                class="youtube-video-place embed-responsive embed-responsive-4by3"
+                data-yt-url="{{product.video_url}}"
+              >
+                <img
+                  style="height: 479px"
+                  src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png"
+                  async
+                  class="play-youtube-video"
+                />
+              </div>
             </div>
-            <h2 class="mt-5 mb-3 text-center">Detailed Specification</h2>
-            <div class="">
-                <p class="article-content">{{ object.detail|safe }}</p>
+            <div class="swiper-slide">
+              <img src="{{ object.image2.url }}" />
             </div>
+            <div class="swiper-slide">
+              <img src="{{ object.image3.url }}" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <a href="{% url 'product-book' product.id %}"><button class="btn btn-primary btn-block main-btn mx-4 mx-md-5" type="button">Buy</button></a>
+      </div>
+      <div class="col-md-6">
+        <h2>
+          {{object.title}}
+          <span style="font-size: 16px">
+            <a
+              target="_blank"
+              style="margin-left: 5px"
+              href="{% url 'product-pdf' object.id %}"
+              ><i
+                class="fa fa-file-pdf-o"
+                style="font-size: 24px; color: black"
+              ></i
+              >PDF</a
+            >
+          </span>
+        </h2>
+        <div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Item Details</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Item Name</td>
+                <td>{{object.title}}</td>
+              </tr>
+              <tr>
+                <td>Model Number</td>
+                <td>{{object.model_number}}</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>{{object.price}}</td>
+              </tr>
+              <tr>
+                <td>Availability</td>
+                {% if object.availability == True %}
+                <td class="mb-0 text-success">Available</td>
+                {% else %}
+                <td class="mb-0 text-danger">Not available</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>{{object.weight}}</td>
+              </tr>
+              <tr>
+                <td>Automatic</td>
+                {% if object.automatic == True %}
+                <td class="mb-0 text-success">Yes</td>
+                {% else %}
+                <td class="mb-0 text-danger">No</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>PLC Control</td>
+                {% if object.plc_control == True %}
+                <td class="mb-0 text-success">Yes</td>
+                {% else %}
+                <td class="mb-0 text-danger">No</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>Computerized</td>
+                {% if object.computerized == True %}
+                <td class="mb-0 text-success">Yes</td>
+                {% else %}
+                <td class="mb-0 text-danger">No</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td>Supply Ability</td>
+                {% if object.supply_ability == True %}
+                <td class="mb-0 text-success">Yes</td>
+                {% else %}
+                <td class="mb-0 text-danger">No</td>
+                {% endif %}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h2 class="mt-5 mb-3 text-center">Detailed Specification</h2>
+      <div class="">
+        <p class="article-content">{{ object.detail|safe }}</p>
+      </div>
     </div>
+    <a href="{% url 'product-book' product.id %}"
+      ><button
+        class="btn btn-primary btn-block main-btn mx-4 mx-md-5"
+        type="button"
+      >
+        Buy
+      </button></a
+    >
+  </div>
 </section>
-
 <script>
-    $(".vertical").carousel({
-        vertical: true
+  $(".vertical").carousel({ vertical: true });
+</script>
+{% endblock content %} {% block javascript %}
+<script>
+  var video_wrapper = $(".youtube-video-place");
+  if (video_wrapper.length) {
+    $(".play-youtube-video").on("click", function () {
+      video_wrapper.html(
+        '<iframe height="479" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' +
+          video_wrapper.data("yt-url") +
+          '"></iframe>'
+      );
     });
+  } /*]]>*/
 </script>
-
-
-{% endblock content %}
-
-{% block javascript %}
-
-<script>
-  var video_wrapper = $('.youtube-video-place');
-  //  Check to see if youtube wrapper exists
-  if(video_wrapper.length){
-  // If user clicks on the video wrapper load the video.
-  $('.play-youtube-video').on('click', function(){
-    /* Dynamically inject the iframe on demand of the user.
-    Pull the youtube url from the data attribute on the wrapper element. */
-    video_wrapper.html('<iframe height="479" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' + video_wrapper.data('yt-url') + '"></iframe>');
-  });
-  }
-</script>
-
 {% endblock javascript %}

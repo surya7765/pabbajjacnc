@@ -2,293 +2,170 @@
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PABBAJJA TECHNOLOGIES | 
-      {% block title %}  
-      {% endblock title %}
-    </title>
-    <!-- Bootsrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
-    <!-- Own Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/responsivestyle.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/faq.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
-
-    <link rel="icon" href="{% static 'images/logo.jpg' %}" />
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    
-    {% block style %}
-    
-    {% endblock style %}
-
-  </head>
-
-  <body>
-    <!-- header section -->
-    <header>
-      <nav class="navbar navbar-expand-lg navigation-wrap"style="background-color: #4071bc;">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}">
-            <h2 id="navbar-inside">pabbajja technologies Pvt. Ltd.</h2>
-            <p id="navbar-inside2">
-              <span style="color: #a4c3f2;">&#128222; 6204227594 |  </span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="17"
-                  height="17.274"
-                  viewBox="0 0 16.543 17.274"
-                >
-                  <g
-                    data-name="Group 1336"
-                    transform="translate(-4369.391 -5904.945)"
-                  >
-                    <circle
-                      cx="8.271"
-                      cy="8.271"
-                      r="8.271"
-                      fill="#efc732"
-                      data-name="Ellipse 81"
-                      transform="translate(4369.391 5904.945)"
-                    ></circle>
-                    <path
-                      d="M0 0h16.542v2.789H0z"
-                      fill="#efc732"
-                      data-name="Rectangle 624"
-                      transform="translate(4369.391 5919.429)"
-                    ></path>
-                    <path
-                      d="M4380.563 5908.823l-1.076 1.076-4.009 4.011-2.033-2.032-.276-.278-.545.547-.544.545 3.4 3.4 6.176-6.177zm0 0"
-                      fill="#d02627"
-                      data-name="Path 939"
-                      transform="translate(.796 1.148)"
-                    ></path>
-                  </g>
-                </svg>
-                <span style="color: #a4c3f2;">TrustSEAL Verified</span>
-              </span>
-            </p>
-          </a>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-stream navbar-toggler-icon"></i>
-          </button>
-          <div class="collapse navbar-collapse show" id="navbarText" style="background-color: #4071bc;">
-            <ul class="navbar-nav ms-auto"style="background-color: #4071bc;">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="{% url 'home' %}"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'product' %}">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'career' %}">Career</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
-              </li>
-              <li>
-                <a href="mailto:admin@pabbajjacnc.com"
-                  ><button class="main-btn">
-                    <i class="fa fa-envelope" aria-hidden="true"></i></button
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- header section end -->
-    {% block content %} {% endblock content %}
-
-    <!-- Footer -->
-
-    <footer class="page-footer font-small" style="background-color: #123366; color: white; bottom: 0; width: 100%;">
-      <!-- Footer Elements -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-6 py-3">
-            <div class="flex-center">
-              <h5 class="text-white">Address</h5>
-              <hr />
-              <br />
-              <address>
-              PL.143,KH 147,Vill-Majhgain,<br/>Block-Chand,Bhabua,<br/>Kaimur,Bihar,India.<br/>
-              +91 6204227594<br />
-              </address>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 py-3">
-            <div class="flex-center">
-              <h5 class="text-white">Quick links</h5>
-              <hr />
-              <br />
-              <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
-              <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
-              <a class="nav-link text-white" href="{% url 'product' %}">Products</a>
-              <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 py-3">
-            <div class="flex-center">
-              <h5 class="text-white">Follow</h5>
-              <hr />
-              <br />
-              <!-- Facebook -->
-              <div class="row">
-                <div class="col-md-3 col-3">
-                  <a class="fb-ic"style="color:#fff;" href="" target="_blank">
-                    <i class="fab fa-facebook-f fa-lg fa-2x"></i>
-                  </a>
-                </div>
-                <!-- Youtube +-->
-                <div class="col-md-3 col-3">
-                  <a target="_blank" class="yt-ic" style="color:#fff;" href="https://www.youtube.com/channel/UCeUrc414eze8PJtMOu-w1_w">
-                    <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-                  </a>
-                </div>
-                <!--Instagram-->
-                <div class="col-md-3 col-3">
-                  <a  target="_blank" class="ins-ic"style="color:#fff;" href="https://www.instagram.com/pabbajja_technologies/">
-                    <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 py-3">
-            <div class="flex-center">
-              <h5 class="text-white">Reach</h5>
-              <hr />
-              <br />
-              <p class="text-white">We would love to hear from you.<br/>Cause your words matters for us!</p>
-              <a href="{% url 'review' %}">
-                <button type="button" class="white-btn btn">
-                  Feedback
-                </button>
-              </a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      <!-- Copyright -->
-    <div class="footer-copyright text-md-center" style="border-top: black 1.5px solid; background-color:#1a345b;height:60px">
-      <div class="container">
-        <p style="color:#4a7dc9;">
-          Copyright Pabbajja Technologies © <span id="display_year"></span>. All rights reserved.
-        </p>
-      </div>
-    </div>
-    </footer>
-    
-    
-    <!-- footer -->
-    <!-- faq -->
-
-    <!-- js libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      $(".collapse").collapse({
-        toggle: true,
-      });
-      document.getElementById('display_year').innerHTML = new Date().getFullYear();
-      $('.navbar-nav>li>a').on('click', function(){
-        $('.navbar-collapse').collapse('hide');
-      });
-      var swiper = new Swiper(".mySwiper", {
-        grabCursor: true,
-        effect: "creative",
-        creativeEffect: {
-          prev: {
-            shadow: true,
-            translate: ["-20%", 0, -1],
-          },
-          next: {
-            translate: ["100%", 0, 0],
-          },
-        },
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
-    
-    {% block javascript %}
-    
-    {% endblock javascript %}
-
-    <!-- Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PABBAJJA TECHNOLOGIES PVT. LTD. is an emerging company in the field of Robotics and CNC machine manufacturing and we're looking for talented people to join our team. We can find a position that best fits your skills and experience , whether you're searching for a new Job or are interested in continuing your career. We are committed to elevating the lives of our customers & employees by providing great services with quality products and look for this type of dedication from all our team members. If this sound like you , then come and join the Pabbajja Technologies Pvt. Ltd.">
+<meta name="keywords" content="CNC Machine,  Wood engraving, Robotic Arms, Pabbajja CNC, Pabbajja Technologies, Robotics, Market of CNC machine, Job provider, Best product in CNC, Stone cutter, microcontroller">
+<meta name="author" content="Yugandhar Surya, Mehul Kumar">
+<meta name="publisher" content="Yugandhar Surya">
+<meta name="copyright" content="Pankaj Kumar Maurya">
+<meta name="page-topic" content="CNC machine">
+<meta name="page-type" content="Startup">
+<meta name="audience" content="Everyone">
+<meta name="robots" content="index, follow">
+<title>PABBAJJA TECHNOLOGIES |
+{% block title %} 
+{% endblock title %}
+</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/responsivestyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/faq.css' %}" />
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
+<link rel="icon" href="{% static 'images/logo.jpg' %}" />
+<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+{% block style %}
+{% endblock style %}
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-lg navigation-wrap"style="background-color: #4071bc;">
+<div class="container">
+<a class="navbar-brand" href="{% url 'home' %}">
+<h1 id="navbar-inside">pabbajja technologies Pvt. Ltd.</h1>
+<p id="navbar-inside2">
+<span style="color:#a4c3f2">&#128222; 6204227594 | </span>
+<span>
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17.274" viewBox="0 0 16.543 17.274">
+<g data-name="Group 1336" transform="translate(-4369.391 -5904.945)">
+<circle cx="8.271" cy="8.271" r="8.271" fill="#efc732" data-name="Ellipse 81" transform="translate(4369.391 5904.945)"></circle>
+<path d="M0 0h16.542v2.789H0z" fill="#efc732" data-name="Rectangle 624" transform="translate(4369.391 5919.429)"></path>
+<path d="M4380.563 5908.823l-1.076 1.076-4.009 4.011-2.033-2.032-.276-.278-.545.547-.544.545 3.4 3.4 6.176-6.177zm0 0" fill="#d02627" data-name="Path 939" transform="translate(.796 1.148)"></path>
+</g>
+</svg>
+<span style="color:#a4c3f2">TrustSEAL Verified</span>
+</span>
+</p>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+<i class="fas fa-stream navbar-toggler-icon"></i>
+</button>
+<div class="collapse navbar-collapse show" id="navbarText" style="background-color:#4071bc">
+<ul class="navbar-nav ms-auto"style="background-color: #4071bc;">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{% url 'product' %}">Products</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{% url 'about' %}">About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{% url 'career' %}">Career</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+</li>
+<li>
+<a href="mailto:admin@pabbajjacnc.com"><button class=main-btn>
+<i class="fa fa-envelope" aria-hidden=true></i></button></a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+{% block content %} {% endblock content %}
+<footer class="page-footer font-small" style="background-color:#123366;color:white;bottom:0;width:100%">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-6 py-3">
+<div class="flex-center">
+<h5 class="text-white">Address</h5>
+<hr />
+<br />
+<address>
+PL.143,KH 147,Vill-Majhgain,<br/>Block-Chand,Bhabua,<br/>Kaimur,Bihar,India.<br/>
++91 6204227594<br />
+</address>
+</div>
+</div>
+<div class="col-md-3 col-6 py-3">
+<div class="flex-center">
+<h5 class="text-white">Quick links</h5>
+<hr />
+<br />
+<a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+<a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+<a class="nav-link text-white" href="{% url 'product' %}">Products</a>
+<a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+</div>
+</div>
+<div class="col-md-3 col-6 py-3">
+<div class="flex-center">
+<h5 class="text-white">Follow</h5>
+<hr />
+<br />
+<div class="row">
+<div class="col-md-3 col-3">
+<a class="fb-ic"style="color:#fff"; href="" target="_blank">
+<i class="fab fa-facebook-f fa-lg fa-2x"></i>
+</a>
+</div>
+<div class="col-md-3 col-3">
+<a target="_blank" class="yt-ic" style="color:#fff" href="https://www.youtube.com/channel/UCeUrc414eze8PJtMOu-w1_w">
+<i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+</a>
+</div>
+<div class="col-md-3 col-3">
+<a target="_blank" class="ins-ic"style="color:#fff"; href="https://www.instagram.com/pabbajja_technologies"/>
+<i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-6 py-3">
+<div class="flex-center">
+<h5 class="text-white">Reach</h5>
+<hr />
+<br />
+<p class="text-white">We would love to hear from you.<br/>Cause your words matters for us!</p>
+<a href="{% url 'review' %}">
+<button type="button" class="white-btn btn">
+Feedback
+</button>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-copyright text-md-center" style="border-top:black 1.5px solid;background-color:#1a345b;height:60px">
+<div class="container">
+<p style="color:#4a7dc9">
+Copyright Pabbajja Technologies © <span id="display_year"></span>. All rights reserved.
+</p>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script>$(".collapse").collapse({toggle:true});document.getElementById("display_year").innerHTML=new Date().getFullYear();$(".navbar-nav>li>a").on("click",function(){$(".navbar-collapse").collapse("hide")});var swiper=new Swiper(".mySwiper",{grabCursor:true,effect:"creative",creativeEffect:{prev:{shadow:true,translate:["-20%",0,-1]},next:{translate:["100%",0,0]}},loop:true,pagination:{el:".swiper-pagination",clickable:true}});</script>
+{% block javascript %}
+{% endblock javascript %}
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 </html>
