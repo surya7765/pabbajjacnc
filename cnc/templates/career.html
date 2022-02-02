@@ -77,40 +77,40 @@
             role="tabpanel"
             aria-labelledby="pills-jobs-tab"
           >
-            {% for job in careers %} {% if job.internship == False %}
             <div class="row">
               <div class="col-sm-6">
-                <div class="card mb-3" style="max-width: 540px">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <a href="{% url 'career-detail' job.id %}"
-                        ><img
-                          src="{{ job.image_url }}"
-                          style="height: 170px"
-                          class="card-img"
-                          alt="{{ job.designation|title }}"
-                      /></a>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
+                {% for job in careers %} {% if job.internship == False %}
+                  <div class="card mb-3" style="max-width: 540px">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
                         <a href="{% url 'career-detail' job.id %}"
-                          ><h5 class="card-title">
-                            {{ job.designation|title }}
-                          </h5></a
-                        >
-                        <p class="card-text">
-                          {{ job.job_description|truncatechars_html:70|safe }}
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted">{{ job.job_location }}</small>
-                        </p>
+                          ><img
+                            src="{{ job.image_url }}"
+                            style="height: 170px"
+                            class="card-img"
+                            alt="{{ job.designation|title }}"
+                        /></a>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <a href="{% url 'career-detail' job.id %}"
+                            ><h5 class="card-title">
+                              {{ job.designation|title }}
+                            </h5></a
+                          >
+                          <p class="card-text">
+                            {{ job.job_description|truncatechars_html:70|safe }}
+                          </p>
+                          <p class="card-text">
+                            <small class="text-muted">{{ job.job_location }}</small>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                {% endif %} {% endfor %}
               </div>
             </div>
-            {% endif %} {% endfor %}
           </div>
           <div
             class="tab-pane fade"
@@ -118,42 +118,42 @@
             role="tabpanel"
             aria-labelledby="pills-internship-tab"
           >
-            {% for job in careers %} 
-            {% if job.internship == True %}
             <div class="row">
               <div class="col-sm-6">
-                <div class="card mb-3" style="max-width: 540px">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <a href="{% url 'career-detail' job.id %}"
-                        ><img
-                        src="{{ job.image_url }}"
-                        style="height: 170px"
-                        class="card-img"
-                        alt="{{ job.designation|title }}"
-                      /></a>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
+                {% for job in careers %} 
+                {% if job.internship == True %}
+                  <div class="card mb-3" style="max-width: 540px">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
                         <a href="{% url 'career-detail' job.id %}"
-                          ><h5 class="card-title">
-                            {{ job.designation|title }}
-                          </h5></a
-                        >
-                        <p class="card-text">
-                          {{ job.job_description|truncatechars_html:70|safe }}
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted">{{ job.job_location }}</small>
-                        </p>
+                          ><img
+                          src="{{ job.image_url }}"
+                          style="height: 170px"
+                          class="card-img"
+                          alt="{{ job.designation|title }}"
+                        /></a>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <a href="{% url 'career-detail' job.id %}"
+                            ><h5 class="card-title">
+                              {{ job.designation|title }}
+                            </h5></a
+                          >
+                          <p class="card-text">
+                            {{ job.job_description|truncatechars_html:70|safe }}
+                          </p>
+                          <p class="card-text">
+                            <small class="text-muted">{{ job.job_location }}</small>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                {% endif %} 
+                {% endfor %}
               </div>
             </div>
-            {% endif %} 
-            {% endfor %}
           </div>
         </div>
       </div>
