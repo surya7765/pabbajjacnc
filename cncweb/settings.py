@@ -181,7 +181,7 @@ django_heroku.settings(locals())
 AWS_QUERYSTRING_AUTH = False
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 AWS_S3_ACCESS_KEY_ID = 'AKIAS5BH7LT6OG6FOH3X'
 AWS_S3_SECRET_ACCESS_KEY = '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'
