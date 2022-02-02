@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-7cuoq4se=1(t=egz%zn$c6*9g=5gi3ue@60evbi8rwtukst)b3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0. 0.1', 'localhost', 'pabbajja.herokuapp.com']
+ALLOWED_HOSTS = ['127.0. 0.1', 'localhost',
+                 'pabbajja.herokuapp.com', 'pabbajjacnc.com']
 
 # TinyMce
 TINYMCE_DEFAULT_CONFIG = {
@@ -90,7 +91,7 @@ ROOT_URLCONF = 'cncweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -178,12 +179,15 @@ django_heroku.settings(locals())
 # AWS access
 
 AWS_QUERYSTRING_AUTH = False
-AWS_DEFAULT_ACL = None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 AWS_S3_ACCESS_KEY_ID = 'AKIAS5BH7LT6OG6FOH3X'
 AWS_S3_SECRET_ACCESS_KEY = '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'
 
 AWS_STORAGE_BUCKET_NAME = 'pankajcnc'
+
+AWS_S3_FILE_OVERWRITE = False
+
+AWS_DEFAULT_ACL = None
