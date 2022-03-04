@@ -14,6 +14,64 @@
       margin-bottom: -40px;
     }
   }
+  
+  .wrapper1 {
+    max-width: 680px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .youtube {
+    background-color: #000;
+    margin-bottom: 30px;
+    padding-top: 56.25%;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .youtube img {
+    width: 100%;
+    top: -16.82%;
+    left: 0;
+    opacity: 0.7;
+  }
+  .youtube .play-button {
+    width: 90px;
+    height: 60px;
+    background-color: #333;
+    box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 6px;
+  }
+  .youtube .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .youtube img,
+  .youtube .play-button {
+    cursor: pointer;
+  }
+  .youtube img,
+  .youtube iframe,
+  .youtube .play-button,
+  .youtube .play-button:before {
+    position: absolute;
+  }
+  .youtube .play-button,
+  .youtube .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+  }
+  .youtube iframe {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
 </style>
 {% endblock style %} {% block content %}
 <section id="home">
@@ -91,73 +149,66 @@
 <section id="our-Product">
   <div class="container mt-2 products">
     <br />
-    <h1 class="text-center">
+    <a href="{% url 'product' %}"><h1 class="text-center">
       <span style="color: #404354"> Our</span>
       <span style="color: #0d56c4"> Products</span>
-    </h1>
+    </h1></a>
     <br />
     <div class="row g-1">
       {% for product in products %}
-      <div class="col-md-4">
-        <div class="p-card" style="padding: 15px">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img style="height: 320px" src="{{product.image1.url}}" />
-              </div>
-              <div class="swiper-slide">
-                <div
-                  style="height: 319px"
-                  class="youtube-video-place embed-responsive embed-responsive-4by3"
-                  data-yt-url="{{product.video_url}}"
-                >
-                  <img
-                    style="height: 319px"
-                    src="https://www.nicepng.com/png/detail/7-75606_play-button-png-image-instagram.png"
-                    async
-                    class="play-youtube-video"
-                  />
+        <div class="col-md-4">
+          <div class="p-card" style="padding: 15px">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img style="height: 320px" src="{{product.image1.url}}" />
+                </div>
+                <div class="swiper-slide">
+                  <div class="wrapper1">
+                    <div class="youtube" data-embed="{{product.video_url}}">
+                      <div class="play-button"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img style="height: 320px" src="{{product.image2.url}}" />
+                </div>
+                <div class="swiper-slide">
+                  <img style="height: 320px" src="{{product.image3.url}}" />
                 </div>
               </div>
-              <div class="swiper-slide">
-                <img style="height: 320px" src="{{product.image2.url}}" />
-              </div>
-              <div class="swiper-slide">
-                <img style="height: 320px" src="{{product.image3.url}}" />
-              </div>
+              <div class="swiper-pagination text-primary"></div>
             </div>
-            <div class="swiper-pagination text-primary"></div>
-          </div>
-          <br />
-          <div class="p-details">
-            <div class="d-flex justify-content-between align-items-center mx-2">
-              <a href="{% url 'product-detail' product.id %}"
-                ><h5>{{product.title}}</h5></a
-              ><span>&#8377;{{product.price}}</span>
-            </div>
-            <div class="mx-2">
-              <hr class="line" />
-            </div>
-            <div class="d-flex justify-content-between mt-2 spec mx-2">
-              <div class="d-flex flex-column align-items-center">
-                <h6 class="mb-0">Model no.</h6>
-                <span>{{product.model_number}}</span>
+            <br />
+            <div class="p-details">
+              <div class="d-flex justify-content-between align-items-center mx-2">
+                <a href="{% url 'product-detail' product.id %}"
+                  ><h5>{{product.title}}</h5></a
+                ><span>&#8377;{{product.price}}</span>
               </div>
-              <div class="d-flex flex-column align-items-center">
-                <h6 class="mb-0">Weight</h6>
-                <span>{{product.weight}}</span>
+              <div class="mx-2">
+                <hr class="line" />
               </div>
-              <div class="d-flex flex-column align-items-center">
-                {% if product.availability == True %}
-                <h6 class="mb-0 text-success">Available</h6>
-                {% else %}
-                <h6 class="mb-0 text-danger">Not available</h6>
-                {% endif %}
+              <div class="d-flex justify-content-between mt-2 spec mx-2">
+                <div class="d-flex flex-column align-items-center">
+                  <h6 class="mb-0">Model no.</h6>
+                  <span>{{product.model_number}}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <h6 class="mb-0">Weight</h6>
+                  <span>{{product.weight}}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  {% if product.availability == True %}
+                  <h6 class="mb-0 text-success">Available</h6>
+                  {% else %}
+                  <h6 class="mb-0 text-danger">Not available</h6>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       {% endfor %}
     </div>
   </div>
@@ -288,18 +339,18 @@
                 {% else %}
                 <div class="carousel-item">
                   {% endif %}
-                  <div class="carousel-caption">
-                    {% if review.image %}
-                    <img src="{{review.image.url}}" />
-                    {% else %}
-                    <img src="{% static 'images/robot.jpg' %}" />
-                    {% endif %}
-                    <h5 style="color: #f7d4db; font-size: 20px">
-                      {{review.name}}
-                    </h5>
-                    <p>{{review.message}}</p>
+                    <div class="carousel-caption">
+                      {% if review.image %}
+                      <img src="{{review.image.url}}" />
+                      {% else %}
+                      <img src="{% static 'images/robot.jpg' %}" />
+                      {% endif %}
+                      <h5 style="color: #f7d4db; font-size: 20px">
+                        {{review.name}}
+                      </h5>
+                      <p>{{review.message}}</p>
+                    </div>
                   </div>
-                </div>
                 {% endfor %}
               </div>
             </div>
@@ -338,15 +389,29 @@
 </section>
 {% endblock content %} {% block javascript %}
 <script>
-  /*<![CDATA[*/ var video_wrapper = $(".youtube-video-place");
-  if (video_wrapper.length) {
-    $(".play-youtube-video").on("click", function () {
-      video_wrapper.html(
-        '<iframe height="319" allowfullscreen frameborder="0" class="embed-responsive-item w-100" src="' +
-          video_wrapper.data("yt-url") +
-          '"></iframe>'
-      );
-    });
-  } /*]]>*/
+  ( function() {
+	var youtube = document.querySelectorAll( ".youtube" );
+	for (var i = 0; i < youtube.length; i++) {
+		var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+		
+		var image = new Image();
+				image.src = source;
+				image.addEventListener( "load", function() {
+					youtube[ i ].appendChild( image );
+				}( i ) );
+		
+				youtube[i].addEventListener( "click", function() {
+
+					var iframe = document.createElement( "iframe" );
+
+							iframe.setAttribute( "frameborder", "0" );
+							iframe.setAttribute( "allowfullscreen", "" );
+							iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
+							this.innerHTML = "";
+							this.appendChild( iframe );
+				} );	
+	};
+	
+} )();
 </script>
 {% endblock javascript %}

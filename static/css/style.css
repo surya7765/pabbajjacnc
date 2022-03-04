@@ -102,8 +102,6 @@ p {
   letter-spacing: 1px;
 }
 
-
-
 .main-btn {
   display: inline-block;
   padding: 0.625rem 1.875rem;
@@ -194,6 +192,14 @@ p {
   margin-left: 0.625rem;
 }
 
+.navbar-brand {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  margin-right: 0rem !important;
+  font-size: 1.25rem !important;
+  text-decoration: none !important;
+  white-space: normal !important;
+}
 
 #navbar-inside {
   font-size: 1.5rem;
@@ -205,11 +211,13 @@ p {
 }
 
 @media screen and (max-width: 425px) {
-  #navbar-inside{
+  #navbar-inside {
     font-size: 1.15rem;
   }
+  #navbar-inside2 {
+    font-size: 16px;
+  }
 }
-
 
 /* top banner design */
 

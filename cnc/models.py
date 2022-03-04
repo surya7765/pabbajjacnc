@@ -46,7 +46,7 @@ class Product(models.Model):
     price = models.CharField(("Enter Price"), max_length=10)
     availability = models.BooleanField(("Available or Not"))
     model_number = models.CharField(max_length=50, blank=True)
-    video_url = models.URLField(max_length=300, null=True)
+    video_url = models.CharField(max_length=300, null=True)
     image1 = models.ImageField(
         upload_to='upload/', max_length=None, blank=True, null=True)
     image2 = models.ImageField(
